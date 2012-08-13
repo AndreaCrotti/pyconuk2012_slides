@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'pycon slidesa'
+project = u'pycon slides'
 copyright = u'2012, Andrea Crotti'
 
 # The version info for the project you're documenting, acts as replacement for
