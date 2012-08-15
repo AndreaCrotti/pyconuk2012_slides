@@ -12,12 +12,3 @@ Contents:
    :maxdepth: 2
 
    emacs.rst
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
