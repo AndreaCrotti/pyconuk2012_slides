@@ -20,6 +20,8 @@ More code
           def _deco(*args, **kwargs):
                func(args, kwargs)
           return _deco
+
+
 =======
 - Emacs is great
 - Emacs is *wonderful*
