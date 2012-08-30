@@ -2,6 +2,8 @@ __metaclass__ = type
 
 from os import path
 
+from PIL import Image
+
 import zmq
 
 CUR_DIR = path.dirname(__file__)
@@ -33,6 +35,27 @@ class ImageMessage:
         fields, data = image_text.split(DATA_DEL)
         img = ImageMessage(*(fields.split(DELIMITER)))
         open(img.image_path + '.loaded', 'w').write(data)
+
+
+def dims_to_boxes(ncols, nrows, size):
+    """Yield boxes to fill the given size with ncols and nrows,
+    keeping the boxes as square as possible
+    """
+    
+
+
+class Splitter:
+    """Split the image in many sub-images and send everything to the
+    socket
+    """
+    def __init__(self, img_path, ncols, nrows):
+        self.ncols = ncols
+        self.nrows = nrows
+        self.img = Image.open(open(img_path))
+
+    def generate_pics(self, remove=False):
+        pass
+
 
 
 def main():
