@@ -8,3 +8,9 @@ A possible idea for the subscriber might be:
 
 Use flask for the web server, zeromq and maybe the PIL to split and
 reprocess the image back together.
+
+How it could work:
+- splitter splits the original picture in many pictures
+- manager keep sending to a socket the content of a directory, with the format
+  (width, length, row, column, image_dumped)
+- a website shows the images received and blanks the empty spots accordingly until it's filled
