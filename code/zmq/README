@@ -1,0 +1,10 @@
+A possible idea for the subscriber might be:
+
+- area_manager split a picture in many small pieces
+- sends every of the pieces to the workers, that will do something with it
+- the picture is sent back modified and merged together in a web interface,
+  which was listening on the same socket
+
+
+Use flask for the web server, zeromq and maybe the PIL to split and
+reprocess the image back together.
