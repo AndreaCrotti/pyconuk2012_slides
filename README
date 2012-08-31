@@ -1,3 +1,13 @@
+* Description
+Andrea studied computer science in Italy and in Germany, and currently
+works in London on a Python infrastructure codeabase. He has been
+working in Python for 7 years now, and enjoyed the wonderful community
+in various Python conferences.
+
+He is a passionate Linux user and fascinated by functional
+programming, and enjoys dancing and doing sports when away from the
+computer.
+
 * Decorators and context managers
 
   Interesting decorators to see
@@ -25,7 +35,8 @@
 * ZeroMQ from scratch
   This talk will be a very brief introduction to ZeroMQ and then jump
   straight in showing an example of how we can create with just a few
-  lines of Python a full distributed application.
+  lines of Python a full distributed program.
+
 
 ** TODO should add what is the application actually doing or not?
   
