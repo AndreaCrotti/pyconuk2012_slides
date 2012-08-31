@@ -1,0 +1,32 @@
+* Decorators and context managers
+
+  Interesting decorators to see
+
+** Caching
+
+** Retry_on_error
+
+** Partial function application
+
+** Section
+
+** Property
+
+** Using __call__ and the def
+
+* Context managers
+
+  Very simple to implement your own context manager, simply create a
+  class with __enter__ and __exit__ or use yield and @contextlib
+   
+
+* ZeroMQ from scratch
+  This talk will be a very brief introduction to ZeroMQ and then jump
+  straight in showing an example of how we can create with just a few
+  lines of Python a full distributed application.
+
+** TODO should add what is the application actually doing or not?
+  
+# Local Variables:
+# mode: org
+# End:
