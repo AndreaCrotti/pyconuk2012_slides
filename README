@@ -30,7 +30,17 @@ computer.
 
   Very simple to implement your own context manager, simply create a
   class with __enter__ and __exit__ or use yield and @contextlib
-   
+  
+  This talk will introduce decorators
+  (http://wiki.python.org/moin/PythonDecorators) and context managers
+  (http://docs.python.org/library/contextlib.html) and show a few
+  possible use cases with real code.
+
+  We will for example have a look at decorators that add a transparent
+  cache, retry on failures automatically, and add a property to a class.
+
+  Then we will introduce context managers and the *with* statement,
+  and show how it can make our life easier.
 
 * ZeroMQ from scratch
   This talk will be a very brief introduction to ZeroMQ and then jump
