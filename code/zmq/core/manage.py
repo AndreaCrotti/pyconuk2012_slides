@@ -44,6 +44,14 @@ def dims_to_boxes(ncols, nrows, size):
     
 
 
+def size_to_rows_cols(dim, fields):
+    """Yield tuples of coordinates from the number for rows and
+    columns
+    """
+    step = dim / fields
+    return range(0, dim, step)[:-1] + [dim-1]
+
+
 class Splitter:
     """Split the image in many sub-images and send everything to the
     socket
