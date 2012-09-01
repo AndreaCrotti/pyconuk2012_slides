@@ -41,7 +41,6 @@ def dims_to_boxes(ncols, nrows, size):
     """Yield boxes to fill the given size with ncols and nrows,
     keeping the boxes as square as possible
     """
-    
 
 
 def size_to_rows_cols(dim, fields):
@@ -50,6 +49,10 @@ def size_to_rows_cols(dim, fields):
     """
     step = dim / fields
     return range(0, dim, step)[:-1] + [dim-1]
+
+
+def make_boxes_two_lines(fst, snd):
+    return zip(fst[:-1], snd[1:])
 
 
 class Splitter:
