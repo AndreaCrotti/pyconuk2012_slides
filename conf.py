@@ -37,7 +37,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'deco'
 
 # General information about the project.
 project = u'pycon slides'
@@ -91,7 +91,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'single-level'
+html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -165,6 +165,16 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'pyconslidesadoc'
+
+slide_theme = 'single-level'
+slide_theme_options = {'custom_css':'custom.css'}
+
+slide_link_html_to_slides = True
+slide_link_html_sections_to_slides = True
+slide_relative_path = "./slides/"
+
+slide_link_to_html = True
+slide_html_relative_path = "../"
 
 
 # -- Options for LaTeX output --------------------------------------------------

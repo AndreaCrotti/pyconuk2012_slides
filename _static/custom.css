@@ -1,0 +1,38 @@
+@import url(amatic.css);
+
+.slides > article.level-1 {
+    padding-right: 0px;
+}
+
+.slides > article.level-1 > h1 {
+    color: #222;
+    font-size: 3.2em;
+    margin-top: 35%;
+    background: rgba(255, 255, 255, 0.65);
+    line-height: 1.5em;
+    padding-left: 30px;
+    font-family: 'AmaticSCBold', 'Open Sans Light Italic';
+    font-weight: 500;
+}
+
+.slides > article.level-1 > p {
+    color: #333;
+    font-size: 1.6em;
+    line-height: 1em;;
+    background: rgba(255, 255, 255, 0.65);
+    text-align: right;
+    margin-top: 0px;
+    padding-right: 20px;
+    padding-left: 60px;
+    padding-bottom: 0.5em;
+    font-family: 'AmaticSCBold', sans-serif;
+    font-weight: 500;
+}
+
+.slides > article.level-1 .caption {
+    color: black;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 0 5px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

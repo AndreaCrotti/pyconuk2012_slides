@@ -1,5 +1,9 @@
-Decorator
-=========
+===========
+ Decorator
+===========
+
+Definition
+==========
 
 A decorator is the name used for a software design pattern. Decorators
 dynamically alter the functionality of a function, method, or class

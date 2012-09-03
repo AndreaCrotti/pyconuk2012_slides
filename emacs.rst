@@ -21,7 +21,3 @@ More code
                func(args, kwargs)
           return _deco
 
-
-=======
-- Emacs is great
-- Emacs is *wonderful*
