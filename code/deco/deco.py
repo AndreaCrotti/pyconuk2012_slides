@@ -22,3 +22,38 @@ def fib_memoized(n):
 
 
 print(fib_memoized(100))
+
+
+# two standard way to define a decorator
+def decorator(func):
+    def _decorator(*args, **kwargs):
+        # something before the function is run
+        ret = func(*args, **kwargs)
+        # something after the function is run
+        return ret
+
+    return _decorator
+
+# and we use it in this way
+# def to_decorate():
+#     print("Hello world")
+
+@decorator
+def to_decorate():
+    print("Hello world")
+
+
+to_decorate = decorator(to_decorate)
+
+
+class call_decorator:
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        self.arg2 = arg2
+
+    def __call__(self, func):
+        def _decorator(*args, **kwargs):
+            ret = func(*args, **kwargs)
+            return ret
+
+        return _decorator
