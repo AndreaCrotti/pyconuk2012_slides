@@ -1,6 +1,6 @@
-============
- Decorators
-============
+=================================
+ Decorators and Context managers
+=================================
 
 Definition
 ==========
@@ -92,7 +92,6 @@ Temporary file creation:
     
         def __exit__(self, type, value, traceback):
             remove(self.temp_file)
-  
 
 
 Links
