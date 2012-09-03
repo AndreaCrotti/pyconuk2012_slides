@@ -1,3 +1,5 @@
+__metaclass__ = type
+
 # simple memoize cache
 def memoize(f, cache={}, *args, **kwargs):
     def _memoize(*args, **kwargs):
@@ -57,3 +59,20 @@ class call_decorator:
             return ret
 
         return _decorator
+
+
+def class_decorator(cls):
+    @classmethod
+    def new_meth():
+        return 100
+
+    cls.new_meth = new_meth
+    return cls
+
+
+@class_decorator
+class C1:
+    pass
+
+c = C1()
+print(C1.new_meth())
