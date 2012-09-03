@@ -69,6 +69,7 @@ def class_decorator(cls):
     return cls
 
 
+# TODO: check http://stackoverflow.com/questions/681953/python-class-decorator for more examples that could be used
 @class_decorator
 class C1:
     pass

@@ -11,4 +11,5 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   emacs.rst
+   zeromq.rst
+   deco.rst
