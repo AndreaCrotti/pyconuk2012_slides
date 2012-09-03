@@ -3,18 +3,16 @@
     Decorators and Context managers
    =================================
 
-===========
- Decorator
-===========
+Decorator
+=========
 
 A decorator is the name used for a software design pattern. Decorators
 dynamically alter the functionality of a function, method, or class
 without having to directly use subclasses or change the source code of
 the function being decorated.
 
-==============================
- Simplest decorator possible:
-==============================
+Simplest decorator possible:
+============================
 
 .. code:: python
 
@@ -28,9 +26,8 @@ the function being decorated.
         return _decorator
 
 
-===========================
- Using the __call__ class:
-===========================
+Using the __call__ class:
+=========================
 
 .. code:: python
 
@@ -48,9 +45,8 @@ the function being decorated.
     
 
 
-=================
- Context manager
-=================
+Context manager
+===============
 
 A context manager is useful whenever you can split the actions in:
 
