@@ -1,6 +1,6 @@
-===========
- Decorator
-===========
+============
+ Decorators
+============
 
 Definition
 ==========
@@ -13,6 +13,10 @@ the function being decorated.
 Simplest decorator possible:
 ============================
 
+.. this is not what is supposed to do, should be in the right order
+
+.. rst-class:: build
+
 .. code:: python
 
     def decorator(func):
@@ -23,6 +27,14 @@ Simplest decorator possible:
             return ret
     
         return _decorator
+
+
+Which can be used as:
+
+.. code:: python
+          
+   @decorator
+   def myfunc(): pass
 
 
 Using the __call__ class:
@@ -54,6 +66,8 @@ A context manager is useful whenever you can split the actions in:
 - teardown
 
 Two ways to do it
+
+.. rst-class:: build
 
 
 
