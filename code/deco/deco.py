@@ -62,8 +62,7 @@ class call_decorator:
 
 
 def class_decorator(cls):
-    @classmethod
-    def new_meth():
+    def new_meth(self):
         return 100
 
     cls.new_meth = new_meth
@@ -75,4 +74,4 @@ class C1:
     pass
 
 c = C1()
-print(C1.new_meth())
+print(c.new_meth())
