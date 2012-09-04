@@ -67,9 +67,6 @@ A context manager is useful whenever you can split the actions in:
 
 Two ways to do it
 
-.. rst-class:: build
-
-
 
 Temporary file creation:
 ========================
@@ -94,8 +91,19 @@ Temporary file creation:
             remove(self.temp_file)
 
 
-Links
-=====
+Thanks
+======
+
+.. figure for possible questions
+
+.. rst-class:: build
+
+.. figure:: ../images/questions.jpg
+
+Slides generated with hieroglyph_
+
+
+.. notslides::
 
 .. _decostory: http://wiki.python.org/moin/PythonDecorators
 .. _hieroglyph: https://github.com/nyergler/hieroglyph
