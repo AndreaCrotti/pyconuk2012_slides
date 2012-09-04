@@ -13,6 +13,9 @@ the function being decorated.
 Simplest decorator possible:
 ============================
 
+.. TODO: should I explain why (*args, **kwargs) is the generic way to
+   call any function?
+
 .. this is not what is supposed to do, should be in the right order
 
 .. rst-class:: build
@@ -95,6 +98,9 @@ Temporary file creation:
 
 Using contextlib
 ================
+
+Contextmanager runs the generator until yield, then stops and runs
+until the end.
 
 .. code:: python
 
