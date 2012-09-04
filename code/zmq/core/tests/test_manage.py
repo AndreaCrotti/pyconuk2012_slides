@@ -17,8 +17,8 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(list(res), coords)
 
     def test_coord_boxes(self):
-        res = list(manage.dims_to_coord(2, 2, (2, 2)))
-        bxs = manage.coords_to_boxes(res)
+        coords = [[(0, 0), (0, 1)], [(1, 0), (1, 1)]]
+        bxs = manage.coords_to_boxes(coords)
         self.assertEqual(list(bxs), [])
 
     def test_to_rows(self):
