@@ -59,6 +59,8 @@ Using the __call__ class:
 Context manager
 ===============
 
+Introduced in Python 2.5 with the with_statement_.
+
 A context manager is useful whenever you can split the actions in:
 
 - set up
@@ -91,6 +93,20 @@ Temporary file creation:
             remove(self.temp_file)
 
 
+Using contextlib
+================
+
+.. code:: python
+
+    from contextlib import contextmanager
+
+    @contextmanager
+    def tag(name):
+        print "<%s>" % name
+        yield
+        print "</%s>" % name
+    
+
 Thanks
 ======
 
@@ -109,3 +125,4 @@ Slides generated with hieroglyph_
 .. _hieroglyph: https://github.com/nyergler/hieroglyph
 .. TODO: actually create the repo
 .. _slides: https://github.com/andreacrotti/pyconuk2012_slides
+.. _with_statement: http://www.python.org/dev/peps/pep-0343/
