@@ -11,13 +11,15 @@ class TestImageMessage(unittest.TestCase):
 
 
 class TestUtils(unittest.TestCase):
-    def test_dims_to_boxes(self):
-        samples = {
-            ((100, 100), 1, 1): [(0, 0, 99, 99)],
-        }
+    def test_xgen_coord(self):
+        coords = [(0, 0), (0, 1), (1, 0), (1, 1)]
+        res = manage.dims_to_coord(2, 2, (2, 2))
+        self.assertEqual(list(res), coords)
 
-        # for k, v in samples.items():
-        #     self.assertEqual(list(manage.dims_to_boxes(*k)), v)
+    def test_coord_boxes(self):
+        res = list(manage.dims_to_coord(2, 2, (2, 2)))
+        bxs = manage.coords_to_boxes(res)
+        self.assertEqual(list(bxs), [])
 
     def test_to_rows(self):
         size = 10

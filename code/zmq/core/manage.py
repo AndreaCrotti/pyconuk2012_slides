@@ -1,6 +1,7 @@
 __metaclass__ = type
 
 from os import path
+from itertools import product
 
 from PIL import Image
 
@@ -37,10 +38,18 @@ class ImageMessage:
         open(img.image_path + '.loaded', 'w').write(data)
 
 
-def dims_to_boxes(ncols, nrows, size):
+def coords_to_boxes(coords):
+    for two_lines in zip(coords[:-1], coords[1:]):
+        yield make_boxes_two_lines(*two_lines)
+
+
+def dims_to_coord(ncols, nrows, size):
     """Yield boxes to fill the given size with ncols and nrows,
     keeping the boxes as square as possible
     """
+    rows = size_to_rows_cols(ncols, size[0])
+    cols = size_to_rows_cols(nrows, size[1])
+    return product(rows, cols)
 
 
 def size_to_rows_cols(dim, fields):
