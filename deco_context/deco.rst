@@ -10,6 +10,22 @@ dynamically alter the functionality of a function, method, or class
 without having to directly use subclasses or change the source code of
 the function being decorated.
 
+What is it
+----------
+
+- every function in
+
+In [10]: def func(arg1, arg2):
+   ....:     var1 = 10
+
+func.func_code.co_argcount     func.func_code.co_consts       func.func_code.co_flags        func.func_code.co_name         func.func_code.co_stacksize
+func.func_code.co_cellvars     func.func_code.co_filename     func.func_code.co_freevars     func.func_code.co_names        func.func_code.co_varnames
+func.func_code.co_code         func.func_code.co_firstlineno  func.func_code.co_lnotab       func.func_code.co_nlocals
+
+For example func.func_code.co_varnames gives ('arg1', 'arg2', 'var1')
+In [18]: func.func_code.co_code
+Out[18]: 'd\x01\x00}\x02\x00d\x00\x00S'
+
 Simplest decorator possible:
 ============================
 
@@ -28,14 +44,14 @@ Simplest decorator possible:
             ret = func(*args, **kwargs)
             # something after the function is run
             return ret
-    
+
         return _decorator
 
 
 Which can be used as:
 
 .. code:: python
-          
+
    @decorator
    def myfunc(): pass
 
@@ -49,14 +65,14 @@ Using the __call__ class:
         def __init__(self, arg1, arg2):
             self.arg1 = arg1
             self.arg2 = arg2
-    
+
         def __call__(self, func):
             def _decorator(*args, **kwargs):
                 ret = func(*args, **kwargs)
                 return ret
-    
+
             return _decorator
-    
+
 
 
 Context manager
@@ -85,13 +101,13 @@ Temporary file creation:
         def __init__(self, content=None):
             self.content = content or ""
             self.temp_file = mktemp()
-    
+
         def __enter__(self):
             with open(self.temp_file, 'w') as wr:
                 wr.write(self.content)
-    
+
             return self.temp_file
-    
+
         def __exit__(self, type, value, traceback):
             remove(self.temp_file)
 
@@ -111,7 +127,7 @@ until the end.
         print "<%s>" % name
         yield
         print "</%s>" % name
-    
+
 
 Thanks
 ======
