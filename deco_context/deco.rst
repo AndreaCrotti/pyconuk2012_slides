@@ -82,6 +82,7 @@ Also a class is an object, and can be also decorator since python > 2.5.
 .. code:: python
 
     def class_decorator(cls):
+        # here self is a free variable
         def new_meth(self):
             return 100
 
@@ -91,7 +92,6 @@ Also a class is an object, and can be also decorator since python > 2.5.
     @class_decorator
     class C1:
         pass
-
 
 
 Context manager
