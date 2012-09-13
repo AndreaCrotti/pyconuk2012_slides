@@ -74,6 +74,25 @@ Using the __call__ class:
             return _decorator
 
 
+Class decorator
+===============
+
+Also a class is an object, and can be also decorator since python > 2.5.
+
+.. code:: python
+
+    def class_decorator(cls):
+        def new_meth(self):
+            return 100
+
+        cls.new_meth = new_meth
+        return cls
+
+    @class_decorator
+    class C1:
+        pass
+
+
 
 Context manager
 ===============
