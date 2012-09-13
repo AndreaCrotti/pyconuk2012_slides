@@ -10,6 +10,7 @@ dynamically alter the functionality of a function, method, or class
 without having to directly use subclasses or change the source code of
 the function being decorated.
 
+
 What is it
 ----------
 
@@ -25,6 +26,33 @@ func.func_code.co_code         func.func_code.co_firstlineno  func.func_code.co_
 For example func.func_code.co_varnames gives ('arg1', 'arg2', 'var1')
 In [18]: func.func_code.co_code
 Out[18]: 'd\x01\x00}\x02\x00d\x00\x00S'
+
+Shocking example
+================
+
+.. code:: python
+
+  def memoize(f, cache={}, *args, **kwargs):
+
+      def _memoize(*args, **kwargs):
+          key = (args, str(kwargs))
+          if not key in cache:
+              cache[key] = f(*args, **kwargs)
+          return cache[key]
+
+      return _memoize
+
+  def fib(n):
+       if n <= 1:
+           return 1
+       return fib(n-1) + fib(n-2)
+
+  @memoize
+  def fib_memoized(n):
+       if n <= 1:
+           return 1
+       return fib_memoized(n-1) + fib_memoized(n-2)
+
 
 Simplest decorator possible:
 ============================
