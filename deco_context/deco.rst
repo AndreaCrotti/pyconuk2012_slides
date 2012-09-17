@@ -84,6 +84,30 @@ Which can be used as:
    def myfunc(): pass
 
 
+Parametric decorator
+====================
+
+Here is where things might get hairy, how do I add arguments to a
+decorator?
+
+.. code:: python
+
+    @deco(arg1="value", arg2=100)
+    def function..
+
+Ideally we have to do the following, write a function that
+
+.. code:: python
+    
+    def multi_deco(func):
+        def _multi_deco(arg1, arg2):
+             def __multi_deco(*args, **kwargs):
+
+             return __multi_deco
+
+        return _multi_deco
+
+
 Using the __call__ class:
 =========================
 
