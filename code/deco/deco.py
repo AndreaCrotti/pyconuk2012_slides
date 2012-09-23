@@ -45,6 +45,14 @@ def to_decorate():
 
 to_decorate = decorator(to_decorate)
 
+def param_deco(func):
+    def _param_deco(arg1, arg2):
+         def __param_deco(*args, **kwargs):
+             pass
+
+         return __param_deco
+    return _param_deco
+
 
 class call_decorator:
     def __init__(self, arg1, arg2):
@@ -67,7 +75,6 @@ def class_decorator(cls):
     return cls
 
 
-# TODO: check http://stackoverflow.com/questions/681953/python-class-decorator for more examples that could be used
 @class_decorator
 class C1:
     pass

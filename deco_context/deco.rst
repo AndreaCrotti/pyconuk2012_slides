@@ -16,9 +16,11 @@ What is it
 
 - every function in Python is a **first class object**
 
-In [10]: def func(arg1, arg2):
-   ....:     var1 = 10
+.. code-block:: python
 
+    def func(arg1, arg2):
+        var1 = 10
+    
 *func* is now bound to an object, which for example encapsulates
 
 For example func.func_code.co_varnames gives ('arg1', 'arg2', 'var1')
@@ -39,9 +41,8 @@ Shocking example
             return 1
         return fib_memoized(n-1) + fib_memoized(n-2)
 
-- fib(5): 2.66 us  <=>   fib_memoized(5): 1.16 us
-- fib(20): 3.78 ms <=>   fib_memoized(20): 1.21 us
-
+- fib(5): 2.66 μs  <=>   fib_memoized(5): 1.16 μs
+- fib(20): 3.78 ms <=>   fib_memoized(20): 1.21 μs
 
 Simplest decorator possible:
 ============================
@@ -82,33 +83,15 @@ decorator?
 
 Ideally we have to do the following, write a function that
 
-.. code-block:: python
-    
-    def multi_deco(func):
-        def _multi_deco(arg1, arg2):
-             def __multi_deco(*args, **kwargs):
-
-             return __multi_deco
-
-        return _multi_deco
+.. literalinclude:: ../code/deco/deco.py
+    :pyobject: param_deco    
 
 
 Using the __call__ class:
 =========================
 
-.. code-block:: python
-
-    class call_decorator:
-        def __init__(self, arg1, arg2):
-            self.arg1 = arg1
-            self.arg2 = arg2
-
-        def __call__(self, func):
-            def _decorator(*args, **kwargs):
-                ret = func(*args, **kwargs)
-                return ret
-
-            return _decorator
+.. literalinclude:: ../code/deco/deco.py
+    :pyobject: call_decorator
 
 
 Class decorator
@@ -116,15 +99,11 @@ Class decorator
 
 Also a class is an object, and can be also decorator since python > 2.5.
 
-.. code-block:: python
+.. literalinclude:: ../code/deco/deco.py
+    :pyobject: class_decorator
 
-    def class_decorator(cls):
-        # here self is a free variable
-        def new_meth(self):
-            return 100
 
-        cls.new_meth = new_meth
-        return cls
+.. code::
 
     @class_decorator
     class C1:
