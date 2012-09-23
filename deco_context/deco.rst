@@ -10,6 +10,9 @@ dynamically alter the functionality of a function, method, or class
 without having to directly use subclasses or change the source code of
 the function being decorated.
 
+Decorators have been introduced in Python 2.5, see decostory_ for more
+info.
+
 
 What is it
 ----------
@@ -127,24 +130,8 @@ Two ways to do it
 Temporary file creation:
 ========================
 
-
-.. code-block:: python
-
-    class TempFile:
-        """Create a temporary file with the given content and remove it on exit
-        """
-        def __init__(self, content=None):
-            self.content = content or ""
-            self.temp_file = mktemp()
-
-        def __enter__(self):
-            with open(self.temp_file, 'w') as wr:
-                wr.write(self.content)
-
-            return self.temp_file
-
-        def __exit__(self, type, value, traceback):
-            remove(self.temp_file)
+.. literalinclude:: ../code/deco/context.py
+    :pyobject: TempFile
 
 
 Using contextlib
@@ -153,33 +140,21 @@ Using contextlib
 Contextmanager runs the generator until yield, then stops and runs
 until the end.
 
-.. code-block:: python
-
-    from contextlib import contextmanager
-
-    @contextmanager
-    def tag(name):
-        print "<%s>" % name
-        yield
-        print "</%s>" % name
+.. literalinclude:: ../code/deco/context.py
+   :pyobject: with_context_manager
 
 
 Thanks
 ======
 
-.. figure for possible questions
-
-.. rst-class:: build
-
 .. figure:: ../images/questions.jpg
 
-Slides generated with hieroglyph_
-
+Slides generated with hieroglyph_, and can be found on github_.
 
 .. notslides::
 
 .. _decostory: http://wiki.python.org/moin/PythonDecorators
 .. _hieroglyph: https://github.com/nyergler/hieroglyph
 .. TODO: actually create the repo
-.. _slides: https://github.com/andreacrotti/pyconuk2012_slides
+.. _github: https://github.com/andreacrotti/pyconuk2012_slides
 .. _with_statement: http://www.python.org/dev/peps/pep-0343/
