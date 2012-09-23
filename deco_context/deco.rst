@@ -31,8 +31,16 @@ Shocking example
 .. literalinclude:: ../code/deco/deco.py
    :pyobject: fib
 
-.. literalinclude:: ../code/deco/deco.py
-   :pyobject: memoize
+.. code-block:: python
+
+    @memoize
+    def fib_memoized(n):
+        if n <= 1:
+            return 1
+        return fib_memoized(n-1) + fib_memoized(n-2)
+
+- fib(5): 2.66 us  <=>   fib_memoized(5): 1.16 us
+- fib(20): 3.78 ms <=>   fib_memoized(20): 1.21 us
 
 
 Simplest decorator possible:
