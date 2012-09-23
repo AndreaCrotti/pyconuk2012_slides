@@ -1,5 +1,3 @@
-__metaclass__ = type
-
 # simple memoize cache
 def memoize(f, cache={}, *args, **kwargs):
     def _memoize(*args, **kwargs):

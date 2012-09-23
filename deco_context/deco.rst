@@ -14,14 +14,12 @@ the function being decorated.
 What is it
 ----------
 
-- every function in
+- every function in Python is a **first class object**
 
 In [10]: def func(arg1, arg2):
    ....:     var1 = 10
 
-func.func_code.co_argcount     func.func_code.co_consts       func.func_code.co_flags        func.func_code.co_name         func.func_code.co_stacksize
-func.func_code.co_cellvars     func.func_code.co_filename     func.func_code.co_freevars     func.func_code.co_names        func.func_code.co_varnames
-func.func_code.co_code         func.func_code.co_firstlineno  func.func_code.co_lnotab       func.func_code.co_nlocals
+*func* is now bound to an object, which for example encapsulates
 
 For example func.func_code.co_varnames gives ('arg1', 'arg2', 'var1')
 In [18]: func.func_code.co_code
@@ -30,28 +28,11 @@ Out[18]: 'd\x01\x00}\x02\x00d\x00\x00S'
 Shocking example
 ================
 
-.. code:: python
+.. literalinclude:: ../code/deco/deco.py
+   :pyobject: fib
 
-  def memoize(f, cache={}, *args, **kwargs):
-
-      def _memoize(*args, **kwargs):
-          key = (args, str(kwargs))
-          if not key in cache:
-              cache[key] = f(*args, **kwargs)
-          return cache[key]
-
-      return _memoize
-
-  def fib(n):
-       if n <= 1:
-           return 1
-       return fib(n-1) + fib(n-2)
-
-  @memoize
-  def fib_memoized(n):
-       if n <= 1:
-           return 1
-       return fib_memoized(n-1) + fib_memoized(n-2)
+.. literalinclude:: ../code/deco/deco.py
+   :pyobject: memoize
 
 
 Simplest decorator possible:
@@ -62,26 +43,22 @@ Simplest decorator possible:
 
 .. this is not what is supposed to do, should be in the right order
 
-.. rst-class:: build
-
-.. code:: python
-
-    def decorator(func):
-        def _decorator(*args, **kwargs):
-            # something before the function is run
-            ret = func(*args, **kwargs)
-            # something after the function is run
-            return ret
-
-        return _decorator
-
+.. literalinclude:: ../code/deco/deco.py
+   :pyobject: decorator
 
 Which can be used as:
 
-.. code:: python
+.. code-block:: python
 
    @decorator
    def myfunc(): pass
+
+
+And it's simply syntactic sugar for
+
+.. code-block:: python
+
+    to_decorate = decorator(to_decorate)
 
 
 Parametric decorator
@@ -90,14 +67,14 @@ Parametric decorator
 Here is where things might get hairy, how do I add arguments to a
 decorator?
 
-.. code:: python
+.. code-block:: python
 
     @deco(arg1="value", arg2=100)
     def function..
 
 Ideally we have to do the following, write a function that
 
-.. code:: python
+.. code-block:: python
     
     def multi_deco(func):
         def _multi_deco(arg1, arg2):
@@ -111,7 +88,7 @@ Ideally we have to do the following, write a function that
 Using the __call__ class:
 =========================
 
-.. code:: python
+.. code-block:: python
 
     class call_decorator:
         def __init__(self, arg1, arg2):
@@ -131,7 +108,7 @@ Class decorator
 
 Also a class is an object, and can be also decorator since python > 2.5.
 
-.. code:: python
+.. code-block:: python
 
     def class_decorator(cls):
         # here self is a free variable
@@ -164,7 +141,7 @@ Temporary file creation:
 ========================
 
 
-.. code:: python
+.. code-block:: python
 
     class TempFile:
         """Create a temporary file with the given content and remove it on exit
@@ -189,7 +166,7 @@ Using contextlib
 Contextmanager runs the generator until yield, then stops and runs
 until the end.
 
-.. code:: python
+.. code-block:: python
 
     from contextlib import contextmanager
 
