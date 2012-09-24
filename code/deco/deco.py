@@ -14,7 +14,7 @@ class retry_n_times:
             while attempts < self.ntimes:
                 try:
                     ret = func(*args, **kwargs)
-                except Exception as e:
+                except Exception:
                     sleep(self.timeout)
                 else:
                     return ret
