@@ -1,7 +1,9 @@
 # simple memoize cache
 def memoize(f, cache={}, *args, **kwargs):
     def _memoize(*args, **kwargs):
+        # create an hashable key for the cache dict
         key = (args, str(kwargs))
+        # check if result already in cache or add it
         if not key in cache:
             cache[key] = f(*args, **kwargs)
 
@@ -33,10 +35,6 @@ def decorator(func):
         return ret
 
     return _decorator
-
-# and we use it in this way
-# def to_decorate():
-#     print("Hello world")
 
 @decorator
 def to_decorate():

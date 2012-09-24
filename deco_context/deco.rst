@@ -47,8 +47,8 @@ Shocking example
 - fib(5): 2.66 μs  <=>   fib_memoized(5): 1.16 μs
 - fib(20): 3.78 ms <=>   fib_memoized(20): 1.21 μs
 
-Simplest decorator possible:
-============================
+Hello decorator
+===============
 
 .. TODO: should I explain why (*args, **kwargs) is the generic way to
    call any function?
@@ -58,19 +58,22 @@ Simplest decorator possible:
 .. literalinclude:: ../code/deco/deco.py
    :pyobject: decorator
 
-Which can be used as:
+
+Which is simply syntactic sugar for:
 
 .. code-block:: python
 
-   @decorator
-   def myfunc(): pass
-
-
-And it's simply syntactic sugar for
-
-.. code-block:: python
-
+    def to_decorate(): pass
     to_decorate = decorator(to_decorate)
+
+
+Memoization
+===========
+
+*memoize* caches the results of generic function calls.
+
+.. literalinclude:: ../code/deco/deco.py
+   :pyobject: memoize
 
 
 Parametric decorator
