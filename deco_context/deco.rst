@@ -205,7 +205,11 @@ A context manager is useful whenever you can split the actions in:
 - action
 - teardown
 
-*Very common pattern*: database connection, perforce connection
+**Very common pattern**:
+
+- database connection
+- perforce connection
+- temporary environment
 
 
 With statement
