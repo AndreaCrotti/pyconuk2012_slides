@@ -1,3 +1,28 @@
+from time import sleep
+
+
+class retry_n_times:
+    """Retry a possible problematic function multiple times
+    """
+    def __init__(self, ntimes=3, timeout=3):
+        self.ntimes = ntimes
+        self.timeout = timeout
+
+    def __call__(self, func):
+        def _retry_n_times(*args, **kwargs):
+            attempts = 0
+            while attempts < self.ntimes:
+                try:
+                    ret = func(*args, **kwargs)
+                except Exception as e:
+                    sleep(self.timeout)
+                else:
+                    return ret
+                attempts += 1
+
+        return _retry_n_times
+
+
 # simple memoize cache
 def memoize(func, cache={}):
     def _memoize(*args, **kwargs):
