@@ -10,7 +10,7 @@ dynamically alter the functionality of a function, method, or class
 without having to directly use subclasses or change the source code of
 the function being decorated.
 
-Decorators have been introduced in Python 2.5, see decostory_ for more
+Decorators have been introduced in Python 2.4, see decostory_ for more
 info.
 
 
@@ -115,6 +115,11 @@ Also a class is an object, and can be also decorator since python > 2.5.
     class C1:
         pass
 
+
+Patch classes
+=============
+
+.. use mock.patch to show how to patch entire classes
 
 Context manager
 ===============
