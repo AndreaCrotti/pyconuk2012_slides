@@ -2,6 +2,10 @@
  Decorators and Context managers
 =================================
 
+.. general motivation: Showing two important constructs in Python that
+.. even if they are just syntactic sugar they help a lot writing
+.. better and less code.
+
 Definition
 ==========
 
