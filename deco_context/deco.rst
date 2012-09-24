@@ -162,6 +162,13 @@ Or alternatively overriding the __call__ method.
     :pyobject: call_decorator
 
 
+Parametric decorator III
+========================
+
+.. literalinclude:: ../code/deco/deco.py
+    :pyobject: retry_n_times
+
+
 Class decorator
 ===============
 
