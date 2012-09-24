@@ -87,7 +87,7 @@ Memoization
 
 .. explain step by step what happened there
 
-Memoization explained 1
+Memoization explained I
 =======================
 
 .. code-block:: python
@@ -111,8 +111,8 @@ Which becomes:
 
 .. TODO: should I do a digression here??
 
-Memoize explained 2
-===================
+Memoize explained II
+====================
 
 Define an inner function which will substitute the real function:
 
@@ -136,8 +136,8 @@ Fill the cache and return the result of calling the function:
         return cache[key]
 
 
-Parametric decorator
-====================
+Parametric decorator I
+======================
 
 Here is where things might get hairy, how do I add arguments to a
 decorator?
@@ -147,14 +147,16 @@ decorator?
     @deco(arg1="value", arg2=100)
     def function..
 
-Ideally we have to do the following, write a function that
+*Triple* function
 
 .. literalinclude:: ../code/deco/deco.py
     :pyobject: param_deco    
 
 
-Using the __call__ class:
-=========================
+Parametric decorator II
+=======================
+
+Or alternatively overriding the __call__ method.
 
 .. literalinclude:: ../code/deco/deco.py
     :pyobject: call_decorator
@@ -180,6 +182,10 @@ Patch classes
 =============
 
 .. use mock.patch to show how to patch entire classes
+
+.. literalinclude:: ../code/deco/patch_class.py
+
+Which applies the patch for all the methods found by *inspection*.
 
 Context manager
 ===============
