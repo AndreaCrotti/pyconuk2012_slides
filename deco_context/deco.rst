@@ -5,21 +5,21 @@
 .. general motivation: Showing two important constructs in Python that
 .. even if they are just syntactic sugar they help a lot writing
 .. better and less code.
+.. You 
 
-Definition
-==========
+Decorator
+=========
 
-A decorator is the name used for a software design pattern. Decorators
+*A decorator is the name used for a software design pattern. Decorators
 dynamically alter the functionality of a function, method, or class
 without having to directly use subclasses or change the source code of
-the function being decorated.
+the function being decorated.*
 
-Decorators have been introduced in Python 2.4, see decostory_ for more
-info.
+Decorators have been introduced in Python 2.4, (see decorator-history_).
 
 
-What is it
-----------
+Background
+==========
 
 - every function in Python is a **first class object**
 
@@ -84,6 +84,37 @@ Memoization
 
 .. literalinclude:: ../code/deco/deco.py
    :pyobject: memoize
+
+.. explain step by step what happened there
+
+Memoization explained 1
+=======================
+
+.. code-block:: python
+
+   @memoize
+   def fib_memoized(n):
+
+Is equivalent to:
+
+.. code-block:: python
+
+   fib_memoized = memoize(fib_memoized)
+
+Which becomes:
+
+.. code-block:: python
+     
+     memoize(fib_memoized, cache={})
+
+**cache is mutable**, so it will be assigned to an object only the first call.
+
+.. TODO: should I do a digression here??
+
+Memoize explained 2
+===================
+
+
 
 
 Parametric decorator
@@ -180,7 +211,7 @@ Slides generated with hieroglyph_, and can be found on github_.
 
 .. notslides::
 
-.. _decostory: http://wiki.python.org/moin/PythonDecorators
+.. _decorator-history: http://wiki.python.org/moin/PythonDecorators
 .. _hieroglyph: https://github.com/nyergler/hieroglyph
 .. TODO: actually create the repo
 .. _github: https://github.com/andreacrotti/pyconuk2012_slides

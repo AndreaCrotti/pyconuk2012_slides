@@ -1,11 +1,11 @@
 # simple memoize cache
-def memoize(f, cache={}, *args, **kwargs):
+def memoize(func, cache={}):
     def _memoize(*args, **kwargs):
         # create an hashable key for the cache dict
         key = (args, str(kwargs))
         # check if result already in cache or add it
         if not key in cache:
-            cache[key] = f(*args, **kwargs)
+            cache[key] = func(*args, **kwargs)
 
         return cache[key]
 
