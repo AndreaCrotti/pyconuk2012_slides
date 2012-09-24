@@ -6,19 +6,25 @@
 .. message-passing instead of threads Not an expert but saw a couple
 .. of talks about ZeroMQ and still no idea of what it was going on.
 
-*It's like two drunkards trying to share a beer. It doesn't matter if they're good buddies. Sooner or later they're going to get into a fight. And the more drunkards you add to the pavement, the more they fight each other over the beer. The tragic majority of MT applications look like drunken bar fights.*
+What
+====
 
-(zeromq_guide_ on multithread applications)
+**sockets on steroids**.
 
-What it is
-==========
-
-C++ messaging library, with bindings for almost **any** language.
+- bindings for 30+ languages
+- asynchronous
+- fast
+- advanced patterns (fan-out, pipeline, req-rep)
 
 Why
 ===
 
-Make sockets smarter and easier to use.
+**Multi-threaded applications will eventually kill you!**
+
+*It's like two drunkards trying to share a beer. It doesn't matter if they're good buddies. Sooner or later they're going to get into a fight. And the more drunkards you add to the pavement, the more they fight each other over the beer. The tragic majority of MT applications look like drunken bar fights.*
+
+(zeromq_guide_ on multithread applications)
+
 
 Patterns
 ========
@@ -36,8 +42,17 @@ Hello world
    :pyobject: start_server
 
 
-Demo time
-=========
+A distributed application
+=========================
+
+
+
+Thanks
+======
+
+.. figure:: ../images/questions.jpg
+
+Slides generated with hieroglyph_, and can be found on github_.
 
 
 Links
