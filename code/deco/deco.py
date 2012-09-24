@@ -2,8 +2,6 @@ from time import sleep
 
 
 class retry_n_times:
-    """Retry a possible problematic function multiple times
-    """
     def __init__(self, ntimes=3, timeout=3):
         self.ntimes = ntimes
         self.timeout = timeout
@@ -23,7 +21,6 @@ class retry_n_times:
         return _retry_n_times
 
 
-# simple memoize cache
 def memoize(func, cache={}):
     def _memoize(*args, **kwargs):
         # create an hashable key for the cache dict
