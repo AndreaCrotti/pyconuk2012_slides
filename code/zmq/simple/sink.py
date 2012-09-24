@@ -1,18 +1,27 @@
+import sys
 import zmq
 
-from .proto import RESULT_ADDR
+from proto import RESULT_ADDR, Result
 
 
-def sink():
+def sink(limit):
+    print("Starting sink process")
     context = zmq.Context()
     recv_sock = context.socket(zmq.SUB)
-    recv_sock.setsockopts(zmq.SUBSCRIBE, '')
+    recv_sock.setsockopt(zmq.SUBSCRIBE, '')
     recv_sock.bind(RESULT_ADDR)
 
-    while True:
-        res = recv_sock.recv()
-        print("Got result %s" % res)
+    received = 0
+    tot_sum = 0
+
+    while received < limit:
+        res = Result.load(recv_sock.recv())
+        print("Got result %s" % str(res))
+        received += 1
+        tot_sum += res.result
+
+    print("Total sum = %d" % tot_sum)
 
 
 if __name__ == '__main__':
-    main()
+    sink(int(sys.argv[1]))
