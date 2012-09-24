@@ -10,18 +10,30 @@
 
 (zeromq_guide_ on multithread applications)
 
+What it is
+==========
+
+C++ messaging library, with bindings for almost **any** language.
 
 Why
 ===
 
+Make sockets smarter and easier to use.
+
 Patterns
 ========
 
-Some examples of the various patterns
+Some examples of the various patterns.
 
 
 Hello world
 ===========
+
+.. literalinclude:: ../code/zmq/hello.py
+   :pyobject: start_client
+
+.. literalinclude:: ../code/zmq/hello.py
+   :pyobject: start_server
 
 
 Demo time
