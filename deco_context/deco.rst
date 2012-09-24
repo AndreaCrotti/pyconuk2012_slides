@@ -141,6 +141,15 @@ Temporary file creation:
 .. literalinclude:: ../code/deco/context.py
     :pyobject: TempFile
 
+Add that there can be an exception handling in the with, equivalent to
+the:
+
+.. try:
+.. except:
+.. finally:
+
+construct in some ways.
+
 
 Using contextlib
 ================

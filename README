@@ -47,7 +47,7 @@ computer.
 * ZeroMQ from scratch
   This talk will be a very brief introduction to ZeroMQ and then jump
   straight in showing an example of how we can create with just a few
-  lines of Python a full distributed program.
+  lines of Python a fully distributed application.
 
 
 ** TODO should add what is the application actually doing or not?
