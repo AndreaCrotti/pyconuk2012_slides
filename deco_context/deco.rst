@@ -198,23 +198,34 @@ A context manager is useful whenever you can split the actions in:
 - action
 - teardown
 
-Two ways to do it
+*Very common pattern*: database connection, perforce connection
 
 
-Temporary file creation:
-========================
+With statement
+==============
+
+The idea is to *not forget cleanup actions*.
+
+.. code-block:: python
+    
+    with TempFile(content='hello temp') as tmp:
+         # work on file tmp
+         
+    # tmp.__exit__() is called, with (type, value, traceback)
+    # if there was an exception
+
+
+Implement __enter__ and __exit__
+================================
 
 .. literalinclude:: ../code/deco/context.py
     :pyobject: TempFile
 
-Add that there can be an exception handling in the with, equivalent to
-the:
+Add that there can be an exception handling in the with.
 
 .. try:
 .. except:
 .. finally:
-
-construct in some ways.
 
 
 Using contextlib
