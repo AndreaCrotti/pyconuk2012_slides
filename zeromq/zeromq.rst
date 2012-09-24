@@ -58,4 +58,6 @@ Slides generated with hieroglyph_, and can be found on github_.
 Links
 =====
 
+.. _hieroglyph: https://github.com/nyergler/hieroglyph
 .. _zeromq_guide: http://zguide.zeromq.org/
+.. _github: https://github.com/andreacrotti/pyconuk2012_slides
