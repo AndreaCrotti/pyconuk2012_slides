@@ -28,11 +28,19 @@ Background
     def func(arg1, arg2):
         var1 = 10
     
-*func* is now bound to an object, which for example encapsulates
+*func* is now bound to an **object**, with type
 
-For example func.func_code.co_varnames gives ('arg1', 'arg2', 'var1')
-In [18]: func.func_code.co_code
-Out[18]: 'd\x01\x00}\x02\x00d\x00\x00S'
+.. code-block:: python
+    
+    >>> type(func)
+    >>> function
+
+.. code-block:: python
+
+    >>> func.func_code.co_varnames
+    >>> ('arg1', 'arg2', 'var1')
+    >>> func.func_code.co_code
+    >>> 'd\x01\x00}\x02\x00d\x00\x00S'
 
 Shocking example
 ================
