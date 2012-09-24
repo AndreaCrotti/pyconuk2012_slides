@@ -114,7 +114,26 @@ Which becomes:
 Memoize explained 2
 ===================
 
+Define an inner function which will substitute the real function:
 
+.. code-block:: python
+
+    def _memoize(*args, **kwargs):
+
+Define an immutable key based on the arguments given:
+
+.. code-block:: python
+
+        key = (args, str(kwargs))
+
+Fill the cache and return the result of calling the function:
+
+.. code-block:: python
+
+        if not key in cache:
+            cache[key] = func(*args, **kwargs)
+
+        return cache[key]
 
 
 Parametric decorator
