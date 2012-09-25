@@ -85,8 +85,8 @@ Which is simply syntactic sugar for:
     to_decorate = decorator(to_decorate)
 
 
-Memoization
-===========
+Back to memoization
+===================
 
 *memoize* caches the results of generic function calls.
 
