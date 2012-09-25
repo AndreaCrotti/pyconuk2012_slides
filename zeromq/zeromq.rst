@@ -11,6 +11,25 @@ What
 
 **sockets on steroids**.
 
+.. ditaa::
+     +------------+        +------------+
+     |            |        |            | Zap!
+     | TCP socket +------->| 0MQ socket |
+     |            | BOOM!  |     cC00   |  POW!!
+     +------------+        +------------+
+       ^    ^    ^
+       |    |    |
+       |    |    +---------+
+       |    |              |
+       |    +----------+   |
+      Illegal          |   |
+      radioisotopes    |   |
+      from secret      |   |
+      Soviet atomic    | Spandex
+      city             |
+                   Cosmic rays
+
+
 - bindings for 30+ languages
 - asynchronous
 - fast
@@ -45,6 +64,7 @@ Hello world
 A distributed application
 =========================
 
+     
 
 
 Thanks
