@@ -94,6 +94,7 @@ Back to memoization
    :pyobject: memoize
 
 .. explain step by step what happened there
+**Completely generic, memoize any recursive function**
 
 Memoization explained I
 =======================
