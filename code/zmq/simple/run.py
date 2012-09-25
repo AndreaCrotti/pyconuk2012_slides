@@ -1,12 +1,14 @@
+import sys
+
 from os import fork, kill
 from signal import SIGTERM
 
-from worker import worker
-from sink import sink
-from manager import manager
+from worker import start_worker
+from sink import start_sink
+from manager import start_manager
 
 LEN = 100000
-WORKERS = 50
+WORKERS = 5
 SUB_LEN = 100
 
 def on_forked_process(func):
@@ -23,12 +25,12 @@ def on_forked_process(func):
 
 def main():
     pids = []
-    sink = on_forked_process(sink)
+    sink = on_forked_process(start_sink)
     pids.append(sink(SUB_LEN))
+    manager = on_forked_process(start_manager)
     pids.append(manager(LEN, WORKERS))
-    manager = on_forked_process(manager)
     for i in range(WORKERS):
-        worker = on_forked_process(worker)
+        worker = on_forked_process(start_worker)
         pids.append(worker(i))
 
     # otherwise it will quit immediately
@@ -37,6 +39,7 @@ def main():
     return pids
 
 if __name__ == '__main__':
+    pids = []
     try:
         pids = main()
     except KeyboardInterrupt:

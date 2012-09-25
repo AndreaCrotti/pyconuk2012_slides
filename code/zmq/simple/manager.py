@@ -4,7 +4,7 @@ import zmq
 from proto import TASK_ADDR, Task
 
 
-def manager(length, sub_len):
+def start_manager(length, sub_len):
     context = zmq.Context()
     print("Doing a distributed sum of an array %d long" % length)
     to_sum = range(length)
@@ -22,4 +22,4 @@ def manager(length, sub_len):
 
 if __name__ == '__main__':
     length, sub_len = map(int, sys.argv[1:])
-    manager(length, sub_len)
+    start_manager(length, sub_len)
