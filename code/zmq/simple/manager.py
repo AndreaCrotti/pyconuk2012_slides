@@ -14,9 +14,13 @@ def start_manager(length, sub_len):
     sent, idx = 0, 0
 
     while sent < sub_len:
-        task_msg = Task(to_sum[idx:idx+sub_len])
+        start, end = idx, idx+sub_len
+        print("Sending sub-array from %d to %d" % (start, end))
+        task_msg = Task(to_sum[start:end]) 
         task_send_sock.send(task_msg.dump())
         sent += 1
+        # increment the index
+        idx += sub_len
 
     print("Sent all the messages")
 
