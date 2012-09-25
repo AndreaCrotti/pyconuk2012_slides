@@ -33,16 +33,15 @@ def main():
         worker = on_forked_process(start_worker)
         pids.append(worker(i))
 
-    # otherwise it will quit immediately
-    while True: pass
-
     return pids
 
 if __name__ == '__main__':
-    pids = []
-    try:
-        pids = main()
-    except KeyboardInterrupt:
-        for pid in pids:
-            print("Killing process %d" % pid)
-            kill(pid, SIGTERM)
+    pids = main()
+    while True:
+        try: pass
+        except KeyboardInterrupt:
+            for pid in pids:
+                print("Killing process %d" % pid)
+                kill(pid, SIGTERM)
+
+            exit(0)

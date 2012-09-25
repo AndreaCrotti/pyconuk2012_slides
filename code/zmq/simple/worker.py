@@ -20,7 +20,7 @@ def start_worker(idx):
     while True:
         task_msg = task_recv_sock.recv()
         subarray = Task.load(task_msg).subarray
-        print("Doing amazing computation on an array %d long" % len(subarray))
+        print("Worker %d doing amazing computation on an array %d long" % (idx, len(subarray)))
         res = Result(idx, sum(subarray))
         res_send_sock.send(res.dump())
         sleep(randrange(5))
