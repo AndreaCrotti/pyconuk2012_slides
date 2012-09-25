@@ -5,6 +5,7 @@ from proto import TASK_ADDR, RESULT_ADDR, Result, Task
 
 
 def worker(idx):
+    print("Starting worker %d" % idx)
     context = zmq.Context()
     res_send_sock = context.socket(zmq.PUB)
     res_send_sock.connect(RESULT_ADDR)
