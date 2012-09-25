@@ -19,7 +19,6 @@ def start_manager(length, sub_len):
         task_msg = Task(to_sum[start:end]) 
         task_send_sock.send(task_msg.dump())
         sent += 1
-        # increment the index
         idx += sub_len
 
     print("Sent all the messages")

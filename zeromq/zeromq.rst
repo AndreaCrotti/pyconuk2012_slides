@@ -162,10 +162,25 @@ Hello world
    :pyobject: start_server
 
 
-A distributed application
-=========================
+Sink
+====
 
-     
+.. literalinclude:: ../code/zmq/simple/sink.py
+    :pyobject: start_sink
+
+
+Worker
+======
+
+.. literalinclude:: ../code/zmq/simple/worker.py
+    :pyobject: start_worker
+
+
+Manager
+=======
+
+.. literalinclude:: ../code/zmq/simple/manager.py
+    :pyobject: start_manager
 
 
 Thanks
