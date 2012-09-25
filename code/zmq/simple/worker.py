@@ -1,6 +1,9 @@
 import sys
 import zmq
 
+from time import sleep
+from random import randrange
+
 from proto import TASK_ADDR, RESULT_ADDR, Result, Task
 
 
@@ -19,6 +22,7 @@ def worker(idx):
         print("Doing amazing computation on an array %d long" % len(subarray))
         res = Result(idx, sum(subarray))
         res_send_sock.send(res.dump())
+        sleep(randrange(5))
 
 
 if __name__ == '__main__':
