@@ -16,7 +16,6 @@ def start_worker(idx):
     task_recv_sock = context.socket(zmq.PULL)
     task_recv_sock.connect(TASK_ADDR)
 
-    # how many tasks should we get there?
     while True:
         task_msg = task_recv_sock.recv()
         subarray = Task.load(task_msg).subarray
