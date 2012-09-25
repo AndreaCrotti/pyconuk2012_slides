@@ -4,7 +4,7 @@ import zmq
 from proto import RESULT_ADDR, Result
 
 
-def sink(limit):
+def start_sink(limit):
     print("Starting sink process")
     context = zmq.Context()
     recv_sock = context.socket(zmq.SUB)
@@ -24,4 +24,4 @@ def sink(limit):
 
 
 if __name__ == '__main__':
-    sink(int(sys.argv[1]))
+    start_sink(int(sys.argv[1]))

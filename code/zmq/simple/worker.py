@@ -7,7 +7,7 @@ from random import randrange
 from proto import TASK_ADDR, RESULT_ADDR, Result, Task
 
 
-def worker(idx):
+def start_worker(idx):
     print("Starting worker %d" % idx)
     context = zmq.Context()
     res_send_sock = context.socket(zmq.PUB)
@@ -27,4 +27,4 @@ def worker(idx):
 
 
 if __name__ == '__main__':
-    worker(int(sys.argv[1]))
+    start_worker(int(sys.argv[1]))
