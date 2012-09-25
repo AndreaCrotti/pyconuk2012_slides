@@ -96,7 +96,7 @@ Back to memoization
 .. explain step by step what happened there
 **Completely generic, memoize any recursive function**
 
-Memoization explained I
+Memoization explained 1
 =======================
 
 .. code-block:: python
@@ -120,8 +120,8 @@ Which becomes:
 
 .. TODO: should I do a digression here??
 
-Memoize explained II
-====================
+Memoize explained 2
+===================
 
 Define an inner function which will substitute the real function:
 
@@ -145,7 +145,7 @@ Fill the cache and return the result of calling the function:
         return cache[key]
 
 
-Parametric decorator I
+Parametric decorator 1
 ======================
 
 Here is where things might get hairy, how do I add arguments to a
@@ -162,8 +162,8 @@ decorator?
     :pyobject: param_deco    
 
 
-Parametric decorator II
-=======================
+Parametric decorator 2
+======================
 
 Or alternatively overriding the __call__ method.
 
@@ -171,8 +171,8 @@ Or alternatively overriding the __call__ method.
     :pyobject: call_decorator
 
 
-Parametric decorator III
-========================
+Parametric decorator 3
+======================
 
 .. literalinclude:: ../code/deco/deco.py
     :pyobject: retry_n_times
