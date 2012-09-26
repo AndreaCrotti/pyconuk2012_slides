@@ -48,19 +48,17 @@ Why
 .. The standard solution would be to spawn many threads and pray.
 .. Nightmare to debug
 
-**Multi-threaded applications will eventually kill you!**
-
-MT application
+Multi-threaded application are usually:
 
 - hard to understand
-- nightmare to debug
-- doesn't scale well
+- a nightmare to debug
+- very hard to scale
 
                **Don't share state!!**
 
 **Message passing**:
 
-Sending network messages between processes
+Sending network messages between processes, but sockets are *hard*.
 
 
 Basic concepts
