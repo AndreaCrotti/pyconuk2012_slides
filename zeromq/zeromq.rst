@@ -74,9 +74,9 @@ Basic concepts
 Connection
 ==========
 
-- inproc
-- tcp
-- ipc (except Windows)
+- inproc (in local process)
+- ipc (interprocess, no Windows)
+- tcp (tcp sockets)
 
 Many clients can *connect* to the same port
 
@@ -140,14 +140,14 @@ Standard *reply-request pattern*
 Hello world client
 ==================
 
-.. literalinclude:: ../code/zmq/client.py
+.. literalinclude:: ../code/zmq/req_rep/client.py
    :pyobject: start_client
 
 
 Hello world server
 ==================
 
-.. literalinclude:: ../code/zmq/server.py
+.. literalinclude:: ../code/zmq/req_rep/server.py
    :pyobject: start_server
 
 
