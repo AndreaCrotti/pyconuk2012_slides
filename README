@@ -16,6 +16,8 @@ computer.
 
 ** TODO [#A] [[http://pythonconquerstheuniverse.wordpress.com/2012/04/29/python-decorators/][follow the advices about explaining decorators]], [[http://stackoverflow.com/questions/739654/understanding-python-decorators][and python decorators qs]]
 
+** TODO [[http://jessenoller.com/2009/02/03/get-with-the-program-as-contextmanager-completely-different/][context managers explained]], or [[http://requires-thinking.blogspot.co.uk/2009/02/this-is-python-context-managers-and.html][using context managers]]
+
 ** Caching
 
 ** Retry_on_error

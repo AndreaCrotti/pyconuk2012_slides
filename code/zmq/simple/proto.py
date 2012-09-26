@@ -1,7 +1,7 @@
 DELIMITER = '::'
 
-TASK_ADDR = 'tcp://127.0.0.1:5555'
-RESULT_ADDR = 'tcp://127.0.0.1:5556'
+TASK_ADDR = 'tcp://127.0.0.1:5559'
+RESULT_ADDR = 'tcp://127.0.0.1:5560'
 
 
 class Result:
