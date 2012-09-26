@@ -55,11 +55,6 @@ Why
 
 .. enable a light color for the shell or work from Emacs
 
-Patterns
-========
-
-Some examples of the various patterns.
-
 Basic concepts
 ==============
 
@@ -78,10 +73,49 @@ Basic concepts
     
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
+    
+
+Connection
+==========
+
+- inproc
+- tcp
+- ipc (except Windows)
+
+Many clients can *connect* to the same port
+
+.. code-block:: python
+
+    socket.connect('tcp://localhost:8888')
+
+Only one process can *bind*
+
+.. code-block:: python
+
+    socket.bind('tcp://localhost:8888')
+
+
+Patterns
+========
+
+Builtin network patterns:
+
+- request-reply
+- publish-subscribe
+- push-pull
+
+Extra devices:
+
+- QUEUE
+- FORWARDER
+- STREAMER
 
 
 Request/Reply
 =============
+
+.. the great thing about ZeroMQ is that it builts all the network
+.. patterns that you might need, and allows to compose them very easily
 
 Standard *reply-request pattern*
 
