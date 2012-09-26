@@ -186,7 +186,15 @@ Publish/Subscribe
 Publisher
 =========
 
+.. literalinclude:: ../code/zmq/pub_sub/pub.py
+    :pyobject: pub
 
+
+Subscriber
+==========
+
+.. literalinclude:: ../code/zmq/pub_sub/sub.py
+    :pyobject: sub
 
 
 Push/Pull
@@ -273,7 +281,6 @@ Thanks
 .. figure:: ../images/questions.jpg
 
 Slides generated with hieroglyph_, and can be found on github_.
-
 
 
 Links
