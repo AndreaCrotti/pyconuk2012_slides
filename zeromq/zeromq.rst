@@ -113,8 +113,6 @@ Request/Reply
 .. the great thing about ZeroMQ is that it builts all the network
 .. patterns that you might need, and allows to compose them very easily
 
-Standard *reply-request pattern*
-
 .. ditaa::
     +------------+
     |            |
@@ -149,6 +147,46 @@ Hello world server
 
 .. literalinclude:: ../code/zmq/req_rep/server.py
    :pyobject: start_server
+
+
+
+Push/Pull
+=========
+
+.. ditaa::
+                 +-------------+
+                 |             |
+                 |  Ventilator |
+                 |             |
+                 +-------------+
+                 |    PUSH     |
+                 \------+------/
+                        |
+                      tasks
+                        |
+        +---------------+---------------+
+        |               |               |
+      task            task             task
+        |               |               |
+        v               v               v
+  /------------\  /------------\  /------------\
+  |    PULL    |  |    PULL    |  |    PULL    |
+  +------------+  +------------+  +------------+
+  |            |  |            |  |            |
+  |   Worker   |  |   Worker   |  |   Worker   |
+  |            |  |            |  |            |
+  +------------+  +------------+  +------------+
+  
+
+Push/Pull sample
+================
+
+.. literalinclude:: ../code/zmq/push_pull/push.py
+   :pyobject: push
+
+
+.. literalinclude:: ../code/zmq/push_pull/pull.py
+   :pyobject: pull
 
 
 Publish/Subscribe
@@ -195,52 +233,6 @@ Subscriber
 
 .. literalinclude:: ../code/zmq/pub_sub/sub.py
     :pyobject: sub
-
-
-Push/Pull
-=========
-
-.. ditaa::
-                 +-------------+
-                 |             |
-                 |  Ventilator |
-                 |             |
-                 +-------------+
-                 |    PUSH     |
-                 \------+------/
-                        |
-                      tasks
-                        |
-        +---------------+---------------+
-        |               |               |
-      task            task             task
-        |               |               |
-        v               v               v
-  /------------\  /------------\  /------------\
-  |    PULL    |  |    PULL    |  |    PULL    |
-  +------------+  +------------+  +------------+
-  |            |  |            |  |            |
-  |   Worker   |  |   Worker   |  |   Worker   |
-  |            |  |            |  |            |
-  +------------+  +------------+  +------------+
-  |    PUSH    |  |    PUSH    |  |    PUSH    |
-  \-----+------/  \-----+------/  \-----+------/
-        |               |               |
-      result          result          result
-        |               |               |
-        +---------------+---------------+
-                        |
-                     results
-                        |
-                        v
-                 /-------------\
-                 |    PULL     |
-                 +-------------+
-                 |             |
-                 |    Sink     |
-                 |             |
-                 +-------------+
-  
 
 
 Sink
