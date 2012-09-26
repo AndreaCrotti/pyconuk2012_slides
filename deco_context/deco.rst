@@ -63,6 +63,9 @@ Background
 Shocking example
 ================
 
+.. And here we see a very simple first example of where a decorator
+.. might be useful.
+
 .. literalinclude:: ../code/deco/deco.py
    :pyobject: fib
 
@@ -99,8 +102,28 @@ Which is simply syntactic sugar for:
 
 .. code-block:: python
 
-    def to_decorate(): pass
-    to_decorate = decorator(to_decorate)
+    def my_function(): pass
+    my_function = decorator(my_function)
+
+
+Why the _decorator
+==================
+
+.. One question which I previously received is why do we actually need the _decorator?
+.. Why can't I just define it like this:
+
+.. Can anyone see what's wrong with this?
+
+.. literalinclude:: ../code/deco/deco.py
+   :pyobject: naive_decorator
+
+.. The problem is that once we don
+
+.. code-block:: python
+   
+   my_function = naive_decorator(my_function)
+
+Here the function get **immediately executed!**, returning None
 
 
 Back to memoization
@@ -128,6 +151,12 @@ Memoization unfolded
     
 - *cache* is initially {}
 - fib(2) should be computed twice, but it's cached after first run
+
+Running in a forked process
+===========================
+
+.. literalinclude:: ../code/deco/deco.py
+   :pyobject: on_forked_process
 
 
 Parametric decorator 1
