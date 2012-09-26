@@ -47,6 +47,8 @@ Why
 
 .. demo time
 
+.. enable a light color for the shell or work from Emacs
+
 Patterns
 ========
 
