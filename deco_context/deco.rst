@@ -98,54 +98,16 @@ Back to memoization
 
 **Completely generic, memoize any recursive function**
 
-Memoization explained 1
-=======================
+Memoization unfolded
+====================
 
 .. code-block:: python
 
-   @memoize
-   def fib_memoized(n):
-
-Is equivalent to:
-
-.. code-block:: python
-
-   fib_memoized = memoize(fib_memoized)
-
-Which becomes:
-
-.. code-block:: python
-     
-     memoize(fib_memoized, cache={})
-
-**cache is mutable**, so it will be assigned to an object only the first call.
-
-.. TODO: should I do a digression here??
-
-Memoize explained 2
-===================
-
-Define an inner function which will substitute the real function:
-
-.. code-block:: python
-
-    def _memoize(*args, **kwargs):
-
-Define an immutable key based on the arguments given:
-
-.. code-block:: python
-
-        key = (args, str(kwargs))
-
-Fill the cache and return the result of calling the function:
-
-.. code-block:: python
-
-        if not key in cache:
-            cache[key] = func(*args, **kwargs)
-
-        return cache[key]
-
+    fib(5)
+    fib(4) + fib(3)
+    (fib(3) + fib(2)) + (fib(2) + fib(1))
+    ...
+    
 
 Parametric decorator 1
 ======================
@@ -196,8 +158,8 @@ Also a class is an object, and can be also decorator since python > 2.5.
         pass
 
 
-Patch classes
-=============
+Patching classes
+================
 
 .. use mock.patch to show how to patch entire classes
 
@@ -263,8 +225,22 @@ Using contextlib
 Contextmanager runs the generator until yield, then stops and runs
 until the end.
 
-.. literalinclude:: ../code/deco/context.py
-   :pyobject: with_context_manager
+.. code-block:: python
+
+    from contextlib import contextmanager
+
+    @contextmanager
+    def tag(name):
+        print "<%s>" % name
+        yield
+        print "</%s>" % name
+
+.. code-block:: python
+    
+     >>> with tag('H1'):
+     >>>      print('Title')
+    
+     '<H1>Title</H1>'
 
 
 Thanks
