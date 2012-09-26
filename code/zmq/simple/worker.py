@@ -22,6 +22,7 @@ def start_worker(idx):
         print("Worker %d doing amazing computation on an array %d long" % (idx, len(subarray)))
         res = Result(idx, sum(subarray))
         res_send_sock.send(res.dump())
+        # TODO: check why we always get the same worker do the job
         sleep(randrange(5))
 
 

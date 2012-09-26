@@ -220,6 +220,8 @@ Which applies the patch for all the methods found by *inspection*.
 Context manager
 ===============
 
+.. TODO: Add an example about locks
+
 .. main idea is to keep track of the context
 
 Introduced in Python 2.5 with the with_statement_.
