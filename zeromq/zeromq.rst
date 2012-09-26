@@ -3,11 +3,17 @@
 =====================
 
 .. motivation: we want to be able to exploit parallelism, using
-.. message-passing instead of threads Not an expert but saw a couple
-.. of talks about ZeroMQ and still no idea of what it was going on.
+.. message-passing instead of threads.
 
-What
-====
+.. As a premise I'm not really a ZeroMQ expert, I only started to use
+.. it a few months ago.  I decided to give a talk about it because in
+.. the past I saw a couple of talks and still didn't get what it was
+.. actually useful or good for.
+
+.. So this talk will be more pragmatic and hands on.
+
+What is ZeroMQ
+==============
 
 **sockets on steroids**.
 
@@ -54,8 +60,30 @@ Patterns
 
 Some examples of the various patterns.
 
+Basic concepts
+==============
+
+- **socket**:
+
+  API is compatible with the standard sockets, but *much more magic*
+
+- **context**
+
+  + one and only for every process
+  + container for all the sockets of a process
+
+.. code-block:: python
+   
+    import zmq
+    
+    context = zmq.Context()
+    socket = context.socket(zmq.REQ)
+
+
 Request/Reply
 =============
+
+Standard *reply-request pattern*
 
 .. ditaa::
     +------------+
@@ -77,6 +105,21 @@ Request/Reply
     |   Server   |
     |            |
     +------------+
+
+
+Hello world client
+==================
+
+.. literalinclude:: ../code/zmq/client.py
+   :pyobject: start_client
+
+
+Hello world server
+==================
+
+.. literalinclude:: ../code/zmq/server.py
+   :pyobject: start_server
+
 
 Publish/Subscribe
 =================
@@ -154,16 +197,6 @@ Push/Pull
                  |             |
                  +-------------+
   
-  
-
-Hello world
-===========
-
-.. literalinclude:: ../code/zmq/hello.py
-   :pyobject: start_client
-
-.. literalinclude:: ../code/zmq/hello.py
-   :pyobject: start_server
 
 
 Sink
