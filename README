@@ -14,7 +14,7 @@ computer.
 
 ** TODO check [[http://blogs.onresolve.com/?p%3D48][this slide presentation on decorators]]
 
-** TODO [#A] [[http://pythonconquerstheuniverse.wordpress.com/2012/04/29/python-decorators/][follow the advices about explaining decorators]]
+** TODO [#A] [[http://pythonconquerstheuniverse.wordpress.com/2012/04/29/python-decorators/][follow the advices about explaining decorators]], [[http://stackoverflow.com/questions/739654/understanding-python-decorators][and python decorators qs]]
 
 ** Caching
 

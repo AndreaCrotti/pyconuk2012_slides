@@ -5,7 +5,11 @@
 .. general motivation: Showing two important constructs in Python that
 .. even if they are just syntactic sugar they help a lot writing
 .. better and less code.
-.. You 
+
+.. The reason why I decided to give this talk is to try to demistify
+.. decorators and context managers, because they are not really so
+.. hard and they are widely used patterns in Python.
+
 
 Decorator
 =========
@@ -17,9 +21,23 @@ the function being decorated.*
 
 Decorators have been introduced in Python 2.4, (see decorator-history_).
 
+.. TODO: remove the definition, and just show a nice example first
+
 
 Background
 ==========
+
+.. Before I show what a decorator is in Python, it should be clear to
+.. everyone that in Python a function is a first class object.
+
+.. Once a function func is defined the name 'func' will be bound in
+.. the current namespace to a object, which type is function.
+
+.. We can inspect the function and see for example its arguments,
+.. or even see the compiled code with func.func_code.co_code.
+
+.. TODO: add that this is not like this in Java, but similar to
+.. function pointers in C
 
 - every function in Python is a **first class object**
 
