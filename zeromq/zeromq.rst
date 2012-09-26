@@ -45,6 +45,8 @@ Why
 (zeromq_guide_ on multithread applications)
 
 
+.. demo time
+
 Patterns
 ========
 

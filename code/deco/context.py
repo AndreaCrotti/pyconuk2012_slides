@@ -16,13 +16,3 @@ class TempFile:
 
     def __exit__(self, type, value, traceback):
         remove(self.temp_file)
-
-
-def with_context_manager():
-    from contextlib import contextmanager
-
-    @contextmanager
-    def tag(name):
-        print "<%s>" % name
-        yield
-        print "</%s>" % name
