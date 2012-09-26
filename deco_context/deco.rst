@@ -108,6 +108,9 @@ Memoization unfolded
     (fib(3) + fib(2)) + (fib(2) + fib(1))
     ...
     
+- *cache* is initially {}
+- fib(2) should be computed twice, but it's cached after first run
+
 
 Parametric decorator 1
 ======================
