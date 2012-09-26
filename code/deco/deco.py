@@ -1,3 +1,4 @@
+from os import _exit, fork
 from time import sleep
 
 
@@ -101,3 +102,26 @@ class C1:
 
 c = C1()
 print(c.new_meth())
+
+
+def on_forked_process(func):
+    def _on_forked_process(*args, **kwargs):
+        pid = fork()
+        if pid == 0:
+            # run the decorated function
+            # in the child process
+            func(*args, **kwargs)
+            _exit(0)
+        else:
+            return pid
+
+    return _on_forked_process
+
+
+def naive_decorator(func, *args, **kwargs):
+    # pre actions
+
+    func(*args, **kwargs)
+
+    # post actions
+
