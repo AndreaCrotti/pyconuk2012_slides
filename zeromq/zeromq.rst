@@ -44,16 +44,12 @@ What is ZeroMQ
 Why
 ===
 
+.. Suppose we have a complicated program that runs for a long time.
+.. The standard solution would be to spawn many threads and pray.
+.. Nightmare to debug
+
 **Multi-threaded applications will eventually kill you!**
 
-*It's like two drunkards trying to share a beer. It doesn't matter if they're good buddies. Sooner or later they're going to get into a fight. And the more drunkards you add to the pavement, the more they fight each other over the beer. The tragic majority of MT applications look like drunken bar fights.*
-
-(zeromq_guide_ on multithread applications)
-
-
-.. demo time
-
-.. enable a light color for the shell or work from Emacs
 
 Basic concepts
 ==============
@@ -100,9 +96,9 @@ Patterns
 
 Builtin network patterns:
 
-- request-reply
-- publish-subscribe
-- push-pull
+- Request-Reply
+- Publish-Subscribe
+- Push-Pull
 
 Extra devices:
 
@@ -254,12 +250,24 @@ Manager
     :pyobject: start_manager
 
 
+On multithreading
+=================
+
+(zeromq_guide_ on multithread applications)
+
+*It's like two drunkards trying to share a beer. It doesn't matter if they're good buddies.*
+
+*Sooner or later they're going to get into a fight. And the more drunkards you add to the pavement, the more they fight each other over the beer.*
+
+*The tragic majority of MT applications look like drunken bar fights.*
+
 Thanks
 ======
 
 .. figure:: ../images/questions.jpg
 
 Slides generated with hieroglyph_, and can be found on github_.
+
 
 
 Links
