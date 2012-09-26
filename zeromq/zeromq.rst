@@ -50,6 +50,18 @@ Why
 
 **Multi-threaded applications will eventually kill you!**
 
+MT application
+
+- hard to understand
+- nightmare to debug
+- doesn't scale well
+
+               **Don't share state!!**
+
+**Message passing**:
+
+Sending network messages between processes
+
 
 Basic concepts
 ==============
