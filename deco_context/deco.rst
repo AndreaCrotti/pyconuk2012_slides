@@ -208,6 +208,8 @@ Which applies the patch for all the methods found by *inspection*.
 Context manager
 ===============
 
+.. main idea is to keep track of the context
+
 Introduced in Python 2.5 with the with_statement_.
 
 A context manager is useful whenever you can split the actions in:
@@ -230,11 +232,16 @@ The idea is to *not forget cleanup actions*.
 
 .. code-block:: python
     
-    with TempFile(content='hello temp') as tmp:
-         # work on file tmp
-         
-    # tmp.__exit__() is called, with (type, value, traceback)
-    # if there was an exception
+    with open('file.txt') as source:
+         text = source.read()
+
+Is equivalent to:
+
+.. code-block:: python
+
+    source = open('file.txt')
+    text = source.read()
+    source.close()
 
 
 Implement __enter__ and __exit__
