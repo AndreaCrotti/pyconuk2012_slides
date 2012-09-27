@@ -310,21 +310,21 @@ Complete application
 Sink
 ====
 
-.. literalinclude:: ../code/zmq/simple/sink.py
+.. literalinclude:: ../code/zmq/dist_adder/sink.py
     :pyobject: start_sink
 
 
 Worker
 ======
 
-.. literalinclude:: ../code/zmq/simple/worker.py
+.. literalinclude:: ../code/zmq/dist_adder/worker.py
     :pyobject: start_worker
 
 
 Manager
 =======
 
-.. literalinclude:: ../code/zmq/simple/manager.py
+.. literalinclude:: ../code/zmq/dist_adder/manager.py
     :pyobject: start_manager
 
 
