@@ -270,6 +270,9 @@ Pub logger
     :pyobject: add_zmq_handler
 
 
+.. literalinclude:: ../code/zmq/pub_logger/pub_log.py
+    :pyobject: watch_log
+
 
 Complete application
 ====================
