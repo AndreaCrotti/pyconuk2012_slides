@@ -128,9 +128,9 @@ Builtin network patterns:
 
 Extra devices:
 
-- QUEUE
-- FORWARDER
-- STREAMER
+- QUEUE (for req-rep)
+- STREAMER (push-pull)
+- FORWARDER (pub-sub)
 
 
 Request/Reply
