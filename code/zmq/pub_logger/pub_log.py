@@ -38,7 +38,7 @@ def watch_log():
 
 if __name__ == '__main__':
     # is this used anywhere??
-    setup_logging()
-    Process(target=watch_log).start()
-    sleep(1)
-    logger.info("This should go around")
+    watch_log()
+    # Process(target=watch_log).start()
+    # sleep(1)
+    # logger.info("This should go around")
