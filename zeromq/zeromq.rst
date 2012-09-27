@@ -307,25 +307,55 @@ Complete application
                    +-------------+
 
 
-Sink
-====
+Protocol
+========
 
-.. literalinclude:: ../code/zmq/dist_adder/sink.py
-    :pyobject: start_sink
+.. literalinclude:: ../code/zmq/dist_adder/proto.py
+    :pyobject: Task
+
+ 
+Serialising
+===========
+
+Dump result on the network
+
+.. code-block:: python
+
+    result = Result(1, 1000)
+    res_sender = context.socket(zmq.PUB)
+    res_sender.connect(RESULT_CHANNEL)
+    res_sender.send(result.dump())
+
+The sink can reconstruct easily
+
+.. code-block:: python
+
+    res_recv = context.socket(zmq.SUB)
+    res_recv.connect(RESULT_CHANNEL)
+    res_recv.setsockopt(zmq.SUBSCRIBE, '')
+    res_msg = res_recv.recv()
+    res = Result.load(res_msg)
 
 
-Worker
-======
+.. Sink
+.. ====
 
-.. literalinclude:: ../code/zmq/dist_adder/worker.py
-    :pyobject: start_worker
+.. .. literalinclude:: ../code/zmq/dist_adder/sink.py
+..     :pyobject: start_sink
 
 
-Manager
-=======
+.. Worker
+.. ======
 
-.. literalinclude:: ../code/zmq/dist_adder/manager.py
-    :pyobject: start_manager
+.. .. literalinclude:: ../code/zmq/dist_adder/worker.py
+..     :pyobject: start_worker
+
+
+.. Manager
+.. =======
+
+.. .. literalinclude:: ../code/zmq/dist_adder/manager.py
+..     :pyobject: start_manager
 
 
 On multithreading
