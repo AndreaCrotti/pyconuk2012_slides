@@ -87,12 +87,12 @@ Basic concepts
   + container for all the sockets of a process
 
 .. code-block:: python
-   
+
     import zmq
-    
+
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
-    
+
 .. go in IPython and show the various things in zmq
 
 Connection
@@ -202,7 +202,7 @@ Push/Pull
   |   Worker   |  |   Worker   |  |   Worker   |
   |            |  |            |  |            |
   +------------+  +------------+  +------------+
-  
+
 
 Push/Pull sample
 ================
@@ -265,7 +265,7 @@ Complete application
 ====================
 
 .. ditaa::
-    
+
                    +-------------+
                    |             |
                    |   Manager   |
@@ -296,8 +296,8 @@ Complete application
           +---------------+---------------+
                           |
                        results
-                          |   
-                          v   
+                          |
+                          v
                    /-------------\
                    |    SUB      |
                    +-------------+
@@ -305,7 +305,7 @@ Complete application
                    |    Sink     |
                    |             |
                    +-------------+
-    
+
 
 Sink
 ====
