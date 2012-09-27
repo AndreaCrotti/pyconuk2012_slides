@@ -8,7 +8,6 @@ def pull(idx):
     context = zmq.Context()
     pull_sock = context.socket(zmq.PULL)
     pull_sock.connect(ADDR)
-
     while True:
         msg = pull_sock.recv()
         print("Worker %d consumed %s" % (idx, msg))
