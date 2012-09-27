@@ -2,9 +2,6 @@
  ZeroMQ from scratch
 =====================
 
-.. motivation: we want to be able to exploit parallelism, using
-.. message-passing instead of threads.
-
 .. As a premise I'm not really a ZeroMQ expert, I only started to use
 .. it a few months ago.  I decided to give a talk about it because in
 .. the past I saw a couple of talks and still didn't get what it was
@@ -14,6 +11,11 @@
 
 What is ZeroMQ
 ==============
+
+.. So what is zeromq?  It's basically sockets on steroids, a message
+.. passing library with a socket-like API.  It has bindings with more
+.. than 30 languages (even javascript or PHP), it's asynchronous,
+.. really fast and provides great advanced communication patterns.
 
 **sockets on steroids**.
 
@@ -44,9 +46,20 @@ What is ZeroMQ
 Why
 ===
 
-.. Suppose we have a complicated program that runs for a long time.
-.. The standard solution would be to spawn many threads and pray.
-.. Nightmare to debug
+.. Whenever we have a complex application that needs to be run in
+.. parallel the standard solution would be using multiple threads.
+.. There are many problems with multi-threading applications with
+.. explicit locks, they are hard to understand, even worse to debug
+.. and they really don't scale very well.
+
+.. The biggest problem is the shared state between threads, and a
+.. better solution is not share state at all, but use a message
+.. passing architecture.
+
+
+.. TODO: add a slide to show what is wrong with sockets
+.. So what was wrong with the standard sockets?
+
 
 Multi-threaded application are usually:
 
