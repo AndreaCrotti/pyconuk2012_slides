@@ -13,7 +13,8 @@ def start_server():
     while True:
         req = sock.recv()
         print(req)
-        sock.send("World")
+        idx = req.split(' ')[1]
+        sock.send("World %s" % idx)
         sleep(1)
 
 
