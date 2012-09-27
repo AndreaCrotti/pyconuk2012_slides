@@ -14,10 +14,8 @@
 Decorator
 =========
 
-*A decorator is the name used for a software design pattern. Decorators
-dynamically alter the functionality of a function, method, or class
-without having to directly use subclasses or change the source code of
-the function being decorated.*
+A **decorator** is a function that takes a *function object* as
+argument, and returns a function object with an alterated behaviour.
 
 Decorators have been introduced in Python 2.4, (see decorator-history_).
 
@@ -41,19 +39,19 @@ Background
 
 - every function in Python is a **first class object**
 
-.. code-block:: python
+::
 
     def func(arg1, arg2):
         var1 = 10
     
 *func* is now bound to an **object**, with type
 
-.. code-block:: python
+::
     
     >>> type(func)
     >>> function
 
-.. code-block:: python
+::
 
     >>> func.func_code.co_varnames
     >>> ('arg1', 'arg2', 'var1')
@@ -69,7 +67,7 @@ Shocking example
 .. literalinclude:: ../code/deco/deco.py
    :pyobject: fib
 
-.. code-block:: python
+::
 
     @memoize
     def fib_memoized(n):
@@ -100,10 +98,30 @@ Hello decorator
 
 Which is simply syntactic sugar for:
 
-.. code-block:: python
+::
 
     def my_function(): pass
     my_function = decorator(my_function)
+
+
+Simple example
+==============
+
+.. literalinclude:: ../code/deco/deco.py
+   :pyobject: verbose
+
+
+::
+
+    >>> @verbose
+    >>> def silly_func():
+    >>>     print("Simple function")
+
+::
+
+    Entering function silly_func
+    Simple function
+    Exiting function silly_func
 
 
 Why the _decorator
@@ -119,7 +137,7 @@ Why the _decorator
 
 .. The problem is that once we don
 
-.. code-block:: python
+::
    
    my_function = naive_decorator(my_function)
 
@@ -142,7 +160,7 @@ Back to memoization
 Memoization unfolded
 ====================
 
-.. code-block:: python
+::
 
     fib(5)
     fib(4) + fib(3)
@@ -165,7 +183,7 @@ Parametric decorator 1
 Here is where things might get hairy, how do I add arguments to a
 decorator?
 
-.. code-block:: python
+::
 
     @deco(arg1="value", arg2=100)
     def function..
@@ -244,14 +262,14 @@ With statement
 
 The idea is to *not forget cleanup actions*.
 
-.. code-block:: python
+::
     
     with open('file.txt') as source:
          text = source.read()
 
 Is equivalent to:
 
-.. code-block:: python
+::
 
     source = open('file.txt')
     text = source.read()
@@ -277,7 +295,7 @@ Using contextlib
 Contextmanager runs the generator until yield, then stops and runs
 until the end.
 
-.. code-block:: python
+::
 
     from contextlib import contextmanager
 
@@ -287,7 +305,7 @@ until the end.
         yield
         print "</%s>" % name
 
-.. code-block:: python
+::
     
      >>> with tag('H1'):
      >>>      print('Title')
