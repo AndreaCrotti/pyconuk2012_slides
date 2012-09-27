@@ -54,11 +54,9 @@ computer.
   lines of Python a fully distributed application.
 
 
+** TODO [[http://techno-weenie.net/2011/6/17/zeromq-pub-sub/][zeromq advantages over redis]]
+
 ** TODO should add what is the application actually doing or not?
-  
-# Local Variables:
-# mode: org
-# End:
 
 * General presentation important things
   - speak slowly and clearly
@@ -66,3 +64,7 @@ computer.
   - avoid too much typing, only final visualisation
   - clean the machine before
   - talk always looking at the people, and don't read the slides
+  
+# Local Variables:
+# mode: org
+# End:

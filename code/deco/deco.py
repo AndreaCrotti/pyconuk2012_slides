@@ -125,3 +125,12 @@ def naive_decorator(func, *args, **kwargs):
 
     # post actions
 
+
+def verbose(original_function):
+    def new_function(*args, **kwargs):
+        print("Entering function %s" % original_function.__name__)
+        ret = original_function(*args, **kwargs)
+        print("Exiting function %s" % original_function.__name__)
+        return ret
+
+    return new_function
