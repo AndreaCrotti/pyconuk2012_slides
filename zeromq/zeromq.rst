@@ -331,7 +331,7 @@ Manager
 On multithreading
 =================
 
-(zeromq_guide_ on multithread applications)
+(from zeromq_guide_)
 
 *It's like two drunkards trying to share a beer. It doesn't matter if they're good buddies.*
 

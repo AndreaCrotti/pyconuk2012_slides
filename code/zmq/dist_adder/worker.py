@@ -1,3 +1,4 @@
+import argparse
 import sys
 import zmq
 
@@ -26,5 +27,12 @@ def start_worker(idx):
         sleep(randrange(5))
 
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Worker')
+    parser.add_argument('idx', help='index of the worker')
+
+    return parser.parse_args()
+
 if __name__ == '__main__':
-    start_worker(int(sys.argv[1]))
+    ns = parse_arguments()
+    start_worker(ns.idx)

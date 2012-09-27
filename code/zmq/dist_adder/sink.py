@@ -1,3 +1,4 @@
+import argparse
 import sys
 import zmq
 
@@ -16,16 +17,23 @@ def start_sink(limit):
     tot_sum = 0
 
     while received < limit:
-        print("Received %d packets" % received)
         res = Result.load(recv_sock.recv())
         print("Got result %s" % str(res))
         sys.stdout.flush()
         received += 1
         tot_sum += res.result
+        print("Received %d packets" % received)
 
     print("Total sum = %d" % tot_sum)
     sys.stdout.flush()
 
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Start the sink process')
+    parser.add_argument('num_pkts', help='number of packets to expect')
+
+    return parser.parse_args()
+
 if __name__ == '__main__':
-    start_sink(int(sys.argv[1]))
+    ns = parse_arguments()
+    start_sink(ns.num_pkts)
