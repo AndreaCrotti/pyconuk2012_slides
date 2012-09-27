@@ -139,26 +139,28 @@ Request/Reply
 .. the great thing about ZeroMQ is that it builts all the network
 .. patterns that you might need, and allows to compose them very easily
 
+
+
 .. ditaa::
-    +------------+
-    |            |
-    |   Client   |
-    |            |
-    +------------+
-    |    REQ     |
-    \---+--------/
-        |    ^
-        |    |
-   "Hello"  "World"
-        |    |
-        v    |
-    /--------+---\
-    |    REP     |
-    +------------+
-    |            |
-    |   Server   |
-    |            |
-    +------------+
+         +------------+
+         |            |
+         |   Client   |
+         |            |
+         +------------+
+         |    REQ     |
+         \---+--------/
+             |    ^
+             |    |
+        "Hello"  "World"
+             |    |
+             v    |
+         /--------+---\
+         |    REP     |
+         +------------+
+         |            |
+         |   Server   |
+         |            |
+         +------------+
 
 
 Hello world client
