@@ -113,9 +113,10 @@ Simple example
 
 ::
 
-    >>> @verbose
     >>> def silly_func():
     >>>     print("Simple function")
+
+    >>> silly_func = verbose(silly_func)
 
 ::
 
@@ -124,8 +125,8 @@ Simple example
     Exiting function silly_func
 
 
-Why the _decorator
-==================
+Why the _decorator?
+===================
 
 .. One question which I previously received is why do we actually need the _decorator?
 .. Why can't I just define it like this:
@@ -170,11 +171,16 @@ Memoization unfolded
 - *cache* is initially {}
 - fib(2) should be computed twice, but it's cached after first run
 
+
 Running in a forked process
 ===========================
 
 .. literalinclude:: ../code/deco/deco.py
    :pyobject: on_forked_process
+
+.. TODO: add about
+.. - chaining decorators
+.. - decorator nesting
 
 
 Parametric decorator 1
