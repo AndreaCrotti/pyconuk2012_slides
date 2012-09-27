@@ -1,7 +1,5 @@
 import logging
 import zmq
-from time import sleep
-from multiprocessing import Process
 
 logger = logging.getLogger(__name__)
 
