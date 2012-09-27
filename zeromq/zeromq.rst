@@ -93,6 +93,7 @@ Basic concepts
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
     
+.. go in IPython and show the various things in zmq
 
 Connection
 ==========
@@ -122,6 +123,8 @@ Builtin network patterns:
 - Request-Reply
 - Publish-Subscribe
 - Push-Pull
+
+.. TODO: add something about router / dealer?? Probably not necessary
 
 Extra devices:
 
