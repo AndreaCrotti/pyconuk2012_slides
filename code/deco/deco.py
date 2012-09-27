@@ -29,6 +29,8 @@ def memoize(func, cache={}):
         # check if result already in cache or add it
         if not key in cache:
             cache[key] = func(*args, **kwargs)
+        else:
+            print("Cache hit for key = %s" % str(key))
 
         return cache[key]
 
