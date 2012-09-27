@@ -86,7 +86,7 @@ Basic concepts
   + one and only for every process
   + container for all the sockets of a process
 
-.. code-block:: python
+::
 
     import zmq
 
@@ -104,13 +104,13 @@ Connection
 
 Many clients can *connect* to the same port
 
-.. code-block:: python
+::
 
     socket.connect('tcp://localhost:8888')
 
 Only one process can *bind*
 
-.. code-block:: python
+::
 
     socket.bind('tcp://localhost:8888')
 
@@ -321,7 +321,7 @@ Serialising
 
 Dump result on the network
 
-.. code-block:: python
+::
 
     result = Result(1, 1000)
     res_sender = context.socket(zmq.PUB)
@@ -330,7 +330,7 @@ Dump result on the network
 
 The sink can reconstruct easily
 
-.. code-block:: python
+::
 
     res_recv = context.socket(zmq.SUB)
     res_recv.connect(RESULT_CHANNEL)
