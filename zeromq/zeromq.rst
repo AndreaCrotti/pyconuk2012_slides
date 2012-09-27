@@ -263,6 +263,14 @@ Subscriber
     :pyobject: sub
 
 
+Pub logger
+==========
+
+.. literalinclude:: ../code/zmq/pub_logger/pub_log.py
+    :pyobject: add_zmq_handler
+
+
+
 Complete application
 ====================
 
