@@ -48,6 +48,13 @@ def fib_memoized(n):
     return fib_memoized(n-1) + fib_memoized(n-2)
 
 
+def fib_iter(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+
+
 print(fib_memoized(100))
 
 
