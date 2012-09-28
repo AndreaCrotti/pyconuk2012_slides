@@ -24,6 +24,8 @@ What is ZeroMQ
 .. than 30 languages (even javascript or PHP), it's asynchronous,
 .. really fast and provides great advanced communication patterns.
 
+.. this is a library, there is no server in between or anything like this
+
 **sockets on steroids**.
 
 .. ditaa::
@@ -328,6 +330,17 @@ Complete application
                    |    Sink     |
                    |             |
                    +-------------+
+
+
+Messages
+========
+
+
+.. TODO: add more about this
+
+- atomic
+- strings
+- multipart
 
 
 Protocol
