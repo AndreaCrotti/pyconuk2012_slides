@@ -10,6 +10,10 @@
 .. decorators and context managers, because they are not really so
 .. hard and they are widely used patterns in Python.
 
+Andrea Crotti
+
+https://github.com/andreacrotti/pyconuk2012_slides
+
 
 Decorator
 =========
@@ -345,12 +349,7 @@ Thanks
 
 .. figure:: ../images/questions.jpg
 
-Slides generated with hieroglyph_, and can be found on github_.
-
-.. notslides::
-
 .. _decorator-history: http://wiki.python.org/moin/PythonDecorators
 .. _hieroglyph: https://github.com/nyergler/hieroglyph
 .. TODO: actually create the repo
-.. _github: https://github.com/andreacrotti/pyconuk2012_slides
 .. _with_statement: http://www.python.org/dev/peps/pep-0343/
