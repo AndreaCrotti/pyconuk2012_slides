@@ -4,6 +4,14 @@ from os import _exit, fork
 from time import sleep
 
 
+def accept_list(*args):
+    print(args)
+
+
+def accept_anything(*args, **kwargs):
+    print(args, kwargs)
+
+
 class Fail:
     def __init__(self, ntimes):
         self.ntimes = ntimes
