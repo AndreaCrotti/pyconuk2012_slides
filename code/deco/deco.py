@@ -12,64 +12,6 @@ def accept_anything(*args, **kwargs):
     print(args, kwargs)
 
 
-class Fail:
-    def __init__(self, ntimes):
-        self.ntimes = ntimes
-        self.attempts = 0
-        self.func_name = 'failing function'
-
-    def __call__(self):
-        if self.ntimes == self.attempts:
-            return 42
-        else:
-            self.attempts += 1
-            raise Exception("Failing time %d" % self.attempts)
-
-
-class retry_n_times:
-    def __init__(self, ntimes=3, timeout=3):
-        self.ntimes = ntimes
-        self.timeout = timeout
-
-    def __call__(self, func):
-        def _retry_n_times(*args, **kwargs):
-            attempts = 0
-            while attempts < self.ntimes:
-                try:
-                    ret = func(*args, **kwargs)
-                except Exception:
-                    sleep(self.timeout)
-                else:
-                    return ret
-                attempts += 1
-
-        return _retry_n_times
-
-
-class retry_n_times2:
-    def __init__(self, ntimes=3, timeout=3):
-        self.ntimes = ntimes
-        self.timeout = timeout
-
-    def __call__(self, func):
-        def _retry_n_times(*args, **kwargs):
-            attempts = 0
-            while attempts < self.ntimes:
-                try:
-                    ret = func(*args, **kwargs)
-                except Exception:
-                    print("%s failed, waiting %d seconds" % (func.func_name, self.timeout))
-                    sleep(self.timeout)
-                else:
-                    print("%s succeeded" % func.func_name)
-                    return ret
-                attempts += 1
-
-            print("Giving up executing %s" % func.func_name)
-
-        return _retry_n_times
-
-
 
 def memoize(func, cache={}):
     def _memoize(*args, **kwargs):
@@ -85,10 +27,12 @@ def memoize(func, cache={}):
 
     return _memoize
 
+
 def fib(n):
     if n <= 1:
         return 1
     return fib(n-1) + fib(n-2)
+
 
 @memoize
 def fib_memoized(n):
@@ -115,12 +59,13 @@ def decorator(func):
 
     return _decorator
 
+
 @decorator
 def to_decorate():
     print("Hello world")
 
 
-to_decorate = decorator(to_decorate)
+# to_decorate = decorator(to_decorate)
 
 def param_deco(func):
     def _param_deco(arg1, arg2):
@@ -142,6 +87,82 @@ class call_decorator:
             return ret
 
         return _decorator
+
+
+class Fail:
+    def __init__(self, ntimes):
+        self.ntimes = ntimes
+        self.attempts = 0
+        self.func_name = 'failing function'
+
+    def __call__(self):
+        if self.ntimes == self.attempts:
+            return 42
+        else:
+            self.attempts += 1
+            raise Exception("Failing time %d" % self.attempts)
+
+
+def retry_n_times_fun(func):
+    def _retry_n_times(ntimes=3, timeout=3):
+        def __retry_n_times(*args, **kwargs):
+            attempts = 0
+            while attempts < ntimes:
+                try:
+                    ret = func(*args, **kwargs)
+                except Exception:
+                    sleep(timeout)
+                else:
+                    return ret
+                attempts += 1
+            
+        return __retry_n_times
+    return _retry_n_times
+
+
+class retry_n_times:
+    def __init__(self, ntimes=3, timeout=3):
+        self.ntimes = ntimes
+        self.timeout = timeout
+
+    def __call__(self, func):
+        def _retry_n_times(*args, **kwargs):
+            attempts = 0
+            while attempts < self.ntimes:
+                try:
+                    ret = func(*args, **kwargs)
+                except Exception:
+                    print("%s failed, waiting %d seconds" % (func.func_name, self.timeout))
+                    sleep(self.timeout)
+                else:
+                    return ret
+                attempts += 1
+
+        return _retry_n_times
+
+
+class retry_n_times_verb:
+    def __init__(self, ntimes=3, timeout=3):
+        self.ntimes = ntimes
+        self.timeout = timeout
+
+    def __call__(self, func):
+        def _retry_n_times(*args, **kwargs):
+            attempts = 0
+            while attempts < self.ntimes:
+                try:
+                    ret = func(*args, **kwargs)
+                except Exception:
+                    print("%s failed, waiting %d seconds" % (func.func_name, self.timeout))
+                    sleep(self.timeout)
+                else:
+                    print("%s succeeded" % func.func_name)
+                    return ret
+                attempts += 1
+
+            print("Giving up executing %s" % func.func_name)
+
+        return _retry_n_times
 
 
 def class_decorator(cls):
