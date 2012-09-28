@@ -1,5 +1,7 @@
 import zmq
 
+from proto import control_recv, task_recv
+
 
 def worker():
     control = zmq.Poller()
