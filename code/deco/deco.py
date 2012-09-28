@@ -9,7 +9,7 @@ class Fail:
         self.ntimes = ntimes
         self.attempts = 0
 
-    def fail_ntimes(self):
+    def __call__(self):
         if self.ntimes == self.attempts:
             return 42
         else:
