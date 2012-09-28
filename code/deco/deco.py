@@ -2,6 +2,13 @@ from os import _exit, fork
 from time import sleep
 
 
+def fail_twice():
+    raise Exception
+    raise Exception
+
+    return 42
+
+
 class retry_n_times:
     def __init__(self, ntimes=3, timeout=3):
         self.ntimes = ntimes
@@ -29,8 +36,8 @@ def memoize(func, cache={}):
         # check if result already in cache or add it
         if not key in cache:
             cache[key] = func(*args, **kwargs)
-        else:
-            print("Cache hit for key = %s" % str(key))
+        # else:
+        #     print("Cache hit for key = %s" % str(key))
 
         return cache[key]
 
@@ -54,8 +61,6 @@ def fib_iter(n):
         a, b = b, a + b
     return a
 
-
-print(fib_memoized(100))
 
 
 # two standard way to define a decorator
@@ -108,9 +113,6 @@ def class_decorator(cls):
 @class_decorator
 class C1:
     pass
-
-c = C1()
-print(c.new_meth())
 
 
 def on_forked_process(func):
