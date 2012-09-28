@@ -29,6 +29,29 @@ class retry_n_times:
         return _retry_n_times
 
 
+class retry_n_times2:
+    def __init__(self, ntimes=3, timeout=3):
+        self.ntimes = ntimes
+        self.timeout = timeout
+
+    def __call__(self, func):
+        def _retry_n_times(*args, **kwargs):
+            attempts = 0
+            while attempts < self.ntimes:
+                print("Attempt number %d to run %s" % (attempts, func.func_name))
+                try:
+                    ret = func(*args, **kwargs)
+                except Exception:
+                    print("%s failed, waiting %d seconds" % (func.func_name, self.timeout))
+                    sleep(self.timeout)
+                else:
+                    return ret
+                attempts += 1
+
+        return _retry_n_times
+
+
+
 def memoize(func, cache={}):
     def _memoize(*args, **kwargs):
         # create an hashable key for the cache dict
