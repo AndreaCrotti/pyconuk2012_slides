@@ -10,7 +10,11 @@
 .. decorators and context managers, because they are not really so
 .. hard and they are widely used patterns in Python.
 
+.. Before I start, if anyone would like to try out while I'm speaking,
+.. all the code is available already on this address.
+
 Andrea Crotti
+@andreacrotti
 
 https://github.com/andreacrotti/pyconuk2012_slides
 

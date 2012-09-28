@@ -10,6 +10,7 @@
 .. So this talk will be more pragmatic and hands on.
 
 Andrea Crotti
+@andreacrotti
 
 https://github.com/andreacrotti/pyconuk2012_slides
 
