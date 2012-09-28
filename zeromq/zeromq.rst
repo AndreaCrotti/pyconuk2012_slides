@@ -281,6 +281,9 @@ Pub logger
     :pyobject: watch_log
 
 
+.. TODO: add example of showing POLLIN on two different channels
+
+
 Complete application
 ====================
 
