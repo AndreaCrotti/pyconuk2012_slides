@@ -258,15 +258,11 @@ Publish/Subscribe
   +------------+  +------------+  +------------+
 
 
-Publisher
-=========
+Publish-Subscribe example
+=========================
 
 .. literalinclude:: ../code/zmq/pub_sub/pub.py
     :pyobject: pub
-
-
-Subscriber
-==========
 
 .. literalinclude:: ../code/zmq/pub_sub/sub.py
     :pyobject: sub

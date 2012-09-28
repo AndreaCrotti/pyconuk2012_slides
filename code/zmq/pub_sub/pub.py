@@ -9,7 +9,6 @@ def pub():
     context = zmq.Context()
     pub_sock = context.socket(zmq.PUB)
     pub_sock.bind(ADDR)
-
     for i in count(0):
         pub_sock.send(str(i))
         sleep(2)
