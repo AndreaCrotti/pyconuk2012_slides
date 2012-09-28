@@ -58,6 +58,16 @@ Background
     >>> func.func_code.co_code
     >>> 'd\x01\x00}\x02\x00d\x00\x00S'
 
+.. Demo time for how to write the simplest decorator
+
+.. implement verbose
+.. - implement void function
+.. - do "new_function = verbose(simple_function)"
+.. - show the code inspected
+.. - show the new_function.func_code.co_freevars
+
+.. - implement function that return something (and skip the return)
+
 Shocking example
 ================
 
