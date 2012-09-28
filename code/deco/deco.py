@@ -8,6 +8,7 @@ class Fail:
     def __init__(self, ntimes):
         self.ntimes = ntimes
         self.attempts = 0
+        self.func_name = 'failing function'
 
     def __call__(self):
         if self.ntimes == self.attempts:
