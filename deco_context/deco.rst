@@ -266,6 +266,17 @@ A context manager is useful whenever you can split the actions in:
 With statement
 ==============
 
+
+::
+
+    with EXPRESSION [as VARIABLE]:
+        BLOCK OF CODE
+    
+
+
+Opening file
+============
+
 The idea is to *not forget cleanup actions*.
 
 ::
