@@ -1,12 +1,20 @@
+__metaclass__ = type
+
 from os import _exit, fork
 from time import sleep
 
 
-def fail_twice():
-    raise Exception
-    raise Exception
+class Fail:
+    def __init__(self, ntimes):
+        self.ntimes = ntimes
+        self.attempts = 0
 
-    return 42
+    def fail_ntimes(self):
+        if self.ntimes == self.attempts:
+            return 42
+        else:
+            self.attempts += 1
+            raise Exception("Failing time %d" % self.attempts)
 
 
 class retry_n_times:
@@ -38,15 +46,17 @@ class retry_n_times2:
         def _retry_n_times(*args, **kwargs):
             attempts = 0
             while attempts < self.ntimes:
-                print("Attempt number %d to run %s" % (attempts, func.func_name))
                 try:
                     ret = func(*args, **kwargs)
                 except Exception:
                     print("%s failed, waiting %d seconds" % (func.func_name, self.timeout))
                     sleep(self.timeout)
                 else:
+                    print("%s succeeded" % func.func_name)
                     return ret
                 attempts += 1
+
+            print("Giving up executing %s" % func.func_name)
 
         return _retry_n_times
 
