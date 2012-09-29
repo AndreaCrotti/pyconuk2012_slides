@@ -331,7 +331,7 @@ Complete application
 Messages
 ========
 
-
+.. figure:: ../images/bottle.jpg
 .. TODO: add more about this
 
 - atomic
