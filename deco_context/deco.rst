@@ -113,13 +113,17 @@ Hello decorator
 .. literalinclude:: ../code/deco/deco.py
    :pyobject: decorator
 
-
-Which is simply syntactic sugar for:
-
 ::
 
     def my_function(): pass
     my_function = decorator(my_function)
+
+*equivalent* to
+
+::
+    
+     @decorator
+     def my_function(): pass
 
 
 Simple example
