@@ -231,6 +231,12 @@ Parametric decorator 3
 ======================
 
 .. literalinclude:: ../code/deco/deco.py
+    :pyobject: retry_n_times_fun
+
+Parametric decorator 4
+======================
+
+.. literalinclude:: ../code/deco/deco.py
     :pyobject: retry_n_times
 
 
