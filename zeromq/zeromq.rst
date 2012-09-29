@@ -331,14 +331,14 @@ Complete application
 Messages
 ========
 
-.. figure:: ../images/bottle.jpg
-    :align: center
-
-.. TODO: add more about this
-
 - atomic
 - strings
 - multipart
+
+.. image:: ../images/message.jpg
+    :width: 350px
+
+.. TODO: add more about this
 
 
 Protocol
@@ -346,6 +346,10 @@ Protocol
 
 .. literalinclude:: ../code/zmq/dist_adder/proto.py
     :pyobject: Task
+
+- google protobuf: http://code.google.com/p/protobuf/
+- JSON
+- YAML
 
  
 Serialising
@@ -406,7 +410,7 @@ zeromq_guide_ on multi-threaded applications:
 Thanks
 ======
 
-.. figure:: ../images/questions.jpg
+.. image:: ../images/questions.jpg
 
 Slides generated with hieroglyph_, and can be found on github_.
 
