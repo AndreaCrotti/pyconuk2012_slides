@@ -115,13 +115,13 @@ Many clients can *connect* to the same port
 
 ::
 
-    socket.connect('tcp://localhost:8888')
+    socket.connect('tcp://127.0.0.1:8888')
 
 Only one process can *bind*
 
 ::
 
-    socket.bind('tcp://localhost:8888')
+    socket.bind('tcp://127.0.0.1:8888')
 
 
 Patterns
@@ -172,15 +172,15 @@ Request/Reply
          +------------+
 
 
-Hello world client
-==================
+Request example
+===============
 
 .. literalinclude:: ../code/zmq/req_rep/client.py
    :pyobject: start_client
 
 
-Hello world server
-==================
+Reply example
+=============
 
 .. literalinclude:: ../code/zmq/req_rep/server.py
    :pyobject: start_server
