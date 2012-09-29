@@ -72,7 +72,7 @@ Background
 .. - implement void function
 .. - do "new_function = verbose(simple_function)"
 .. - show the code inspected
-.. - show the new_function.func_code.co_freevars
+.. - show the new_function.func_code.co_freevars (works thanks to closure)
 
 .. - implement function that return something (and skip the return)
 
@@ -304,6 +304,8 @@ The idea is to *not forget cleanup actions*.
 
 Is equivalent to:
 
+.. TODO: add something about error handling
+
 ::
 
     source = open('file.txt')
@@ -346,6 +348,7 @@ until the end.
      >>>      print('Title')
     
      '<H1>Title</H1>'
+
 
 
 Thanks
