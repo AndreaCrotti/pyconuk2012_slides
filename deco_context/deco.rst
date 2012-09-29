@@ -281,21 +281,13 @@ A context manager is useful whenever you can split the actions in:
 - temporary environment
 
 
-With statement
-==============
-
+Context manager
+===============
 
 ::
 
     with EXPRESSION [as VARIABLE]:
         BLOCK OF CODE
-    
-
-
-Opening file
-============
-
-The idea is to *not forget cleanup actions*.
 
 ::
     
@@ -349,6 +341,30 @@ until the end.
     
      '<H1>Title</H1>'
 
+
+
+Conclusion
+==========
+
+- **great ways to improve your code**
+
+- *don't overdo it!*
+
+::
+    
+    @verbose
+    @logging(filename='x.log')
+    @memoize
+    def func():
+        # ...
+
+::
+    
+    with Ctx(1) as ct:
+         with Temp(2) as tmp:
+              # ..
+              with OnlyNow() as only:
+                   #  ..
 
 
 Thanks
