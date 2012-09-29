@@ -2,7 +2,7 @@ from time import sleep
 from itertools import count
 import zmq
 
-ADDR = 'tcp://127.0.0.1:9999'
+from proto import ADDR
 
 # from proto import FRONTEND_ADDR
 # pub_sock.connect(FRONTEND_ADDR)
