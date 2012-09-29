@@ -332,6 +332,8 @@ Messages
 ========
 
 .. figure:: ../images/bottle.jpg
+    :align: center
+
 .. TODO: add more about this
 
 - atomic
@@ -390,10 +392,10 @@ The sink can reconstruct easily
 ..     :pyobject: start_manager
 
 
-On multithreading
-=================
+Conclusion
+==========
 
-(from zeromq_guide_)
+zeromq_guide_ on multi-threaded applications:
 
 *It's like two drunkards trying to share a beer. It doesn't matter if they're good buddies.*
 
