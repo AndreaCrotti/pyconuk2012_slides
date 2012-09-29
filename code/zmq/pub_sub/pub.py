@@ -4,6 +4,8 @@ import zmq
 
 ADDR = 'tcp://127.0.0.1:9999'
 
+# from proto import FRONTEND_ADDR
+# pub_sock.connect(FRONTEND_ADDR)
 
 def pub():
     context = zmq.Context()

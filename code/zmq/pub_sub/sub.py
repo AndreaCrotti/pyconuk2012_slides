@@ -3,6 +3,9 @@ import sys
 
 ADDR = 'tcp://127.0.0.1:9999'
 
+# from proto import BACKEND_ADDR
+# sub_sock.connect(BACKEND_ADDR)
+
 
 def sub(idx):
     context = zmq.Context()
