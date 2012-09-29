@@ -12,6 +12,10 @@ def accept_anything(*args, **kwargs):
     print(args, kwargs)
 
 
+def surprise(a=[]):
+    a.append(5)
+    return a
+
 
 def memoize(func, cache={}):
     def _memoize(*args, **kwargs):
