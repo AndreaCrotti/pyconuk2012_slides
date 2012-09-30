@@ -18,16 +18,11 @@ def surprise(a=[]):
 
 
 def memoize(func, cache={}):
-    def _memoize(*args, **kwargs):
-        # create an hashable key for the cache dict
-        key = (args, str(kwargs))
-        # check if result already in cache or add it
-        if not key in cache:
-            cache[key] = func(*args, **kwargs)
-        # else:
-        #     print("Cache hit for key = %s" % str(key))
+    def _memoize(*args):
+        if not args in cache:
+            cache[args] = func(*args)
 
-        return cache[key]
+        return cache[args]
 
     return _memoize
 
@@ -119,7 +114,7 @@ def retry_n_times_fun(func):
                 else:
                     return ret
                 attempts += 1
-            
+
         return __retry_n_times
     return _retry_n_times
 
