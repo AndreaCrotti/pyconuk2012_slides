@@ -9,6 +9,14 @@
 
 .. So this talk will be more pragmatic and hands on.
 
+=======
+Andrea Crotti
+@andreacrotti
+
+https://github.com/andreacrotti/pyconuk2012_slides
+code/zmq
+
+
 What is ZeroMQ
 ==============
 
@@ -106,13 +114,21 @@ Many clients can *connect* to the same port
 
 ::
 
+<<<<<<< HEAD
     socket.connect('tcp://localhost:8888')
+=======
+    socket.connect('tcp://127.0.0.1:8888')
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 
 Only one process can *bind*
 
 ::
 
+<<<<<<< HEAD
     socket.bind('tcp://localhost:8888')
+=======
+    socket.bind('tcp://127.0.0.1:8888')
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 
 
 Patterns
@@ -123,6 +139,7 @@ Builtin network patterns:
 - Request-Reply
 - Publish-Subscribe
 - Push-Pull
+<<<<<<< HEAD
 
 .. TODO: add something about router / dealer?? Probably not necessary
 
@@ -178,6 +195,63 @@ Hello world server
 
 
 
+=======
+
+.. TODO: add something about router / dealer?? Probably not necessary
+
+Extra devices:
+
+- QUEUE (for req-rep)
+- STREAMER (push-pull)
+- FORWARDER (pub-sub)
+
+
+Request/Reply
+=============
+
+.. the great thing about ZeroMQ is that it builts all the network
+.. patterns that you might need, and allows to compose them very easily
+
+
+
+.. ditaa::
+         +------------+
+         |            |
+         |   Client   |
+         |            |
+         +------------+
+         |    REQ     |
+         \---+--------/
+             |    ^
+             |    |
+        "Hello"  "World"
+             |    |
+             v    |
+         /--------+---\
+         |    REP     |
+         +------------+
+         |            |
+         |   Server   |
+         |            |
+         +------------+
+
+
+Request example
+===============
+
+.. literalinclude:: ../code/zmq/req_rep/client.py
+   :pyobject: start_client
+
+
+Reply example
+=============
+
+.. literalinclude:: ../code/zmq/req_rep/server.py
+   :pyobject: start_server
+
+
+
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 Push/Pull
 =========
 
@@ -249,18 +323,42 @@ Publish/Subscribe
   +------------+  +------------+  +------------+
 
 
+<<<<<<< HEAD
 Publisher
 =========
+=======
+Publish-Subscribe example
+=========================
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 
 .. literalinclude:: ../code/zmq/pub_sub/pub.py
     :pyobject: pub
 
+<<<<<<< HEAD
 
 Subscriber
 ==========
 
 .. literalinclude:: ../code/zmq/pub_sub/sub.py
     :pyobject: sub
+=======
+.. literalinclude:: ../code/zmq/pub_sub/sub.py
+    :pyobject: sub
+
+
+Pub logger
+==========
+
+.. literalinclude:: ../code/zmq/pub_logger/pub_log.py
+    :pyobject: add_zmq_handler
+
+
+.. literalinclude:: ../code/zmq/pub_logger/pub_log.py
+    :pyobject: watch_log
+
+
+.. TODO: add example of showing POLLIN on two different channels
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 
 
 Complete application
@@ -309,12 +407,35 @@ Complete application
                    +-------------+
 
 
+<<<<<<< HEAD
+=======
+Messages
+========
+
+- atomic
+- strings
+- multipart
+
+.. image:: ../images/message.jpg
+    :width: 350px
+
+.. TODO: add more about this
+
+
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 Protocol
 ========
 
 .. literalinclude:: ../code/zmq/dist_adder/proto.py
     :pyobject: Task
 
+<<<<<<< HEAD
+=======
+- google protobuf: http://code.google.com/p/protobuf/
+- JSON
+- YAML
+
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
  
 Serialising
 ===========
@@ -360,10 +481,17 @@ The sink can reconstruct easily
 ..     :pyobject: start_manager
 
 
+<<<<<<< HEAD
 On multithreading
 =================
 
 (from zeromq_guide_)
+=======
+Conclusion
+==========
+
+zeromq_guide_ on multi-threaded applications:
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 
 *It's like two drunkards trying to share a beer. It doesn't matter if they're good buddies.*
 
@@ -374,7 +502,11 @@ On multithreading
 Thanks
 ======
 
+<<<<<<< HEAD
 .. figure:: ../images/questions.jpg
+=======
+.. image:: ../images/questions.jpg
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 
 Slides generated with hieroglyph_, and can be found on github_.
 
@@ -382,6 +514,13 @@ Slides generated with hieroglyph_, and can be found on github_.
 Links
 =====
 
+<<<<<<< HEAD
+=======
+- hieroglyph_
+- zeromq_guide_
+- github_
+
+>>>>>>> c17ac66be998c9bf0b4dc2bb36b7aed23c8a906a
 .. _hieroglyph: https://github.com/nyergler/hieroglyph
 .. _zeromq_guide: http://zguide.zeromq.org/
 .. _github: https://github.com/andreacrotti/pyconuk2012_slides

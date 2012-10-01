@@ -1,0 +1,4 @@
+ADDR = 'tcp://127.0.0.1:9999'
+
+FRONTEND_ADDR = 'tcp://127.0.0.1:9991'
+BACKEND_ADDR = 'tcp://127.0.0.1:9992'
