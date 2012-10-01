@@ -1,0 +1,10 @@
+To generate these slides you need the the following:
+
+- http://sphinx.pocoo.org/
+- https://github.com/baloo/sphinx-ditaa
+- https://github.com/nyergler/hieroglyph
+- http://ditaa.sourceforge.net/
+
+and then running *make* will generate slides for both presentations.
+
+Use "SPHINX_BUILD=your_sphinx_build make" to override my SPHINX_BUILD=sphinx_build2 setting incase it doesn't work.
