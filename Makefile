@@ -13,10 +13,15 @@ PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   =  $(PAPEROPT_$(PAPER)) $(SPHINXOPTS)
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+DROP = $(HOME)/Dropbox/Public/talks
 
 .PHONY: deco zeromq_gen clean
 
-all: zeromq_gen deco
+all: zeromq_gen deco upload
+
+upload:
+	cp -Rv deco_slides $(DROP)/
+	cp -Rv zeromq_slides $(DROP)/
 
 clean:
 	-rm -rf deco_slides/* zeromq_slides/*
